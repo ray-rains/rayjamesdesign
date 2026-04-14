@@ -1,7 +1,9 @@
+import Hero from './components/Hero'
+
 export default function App() {
   return (
-    <div>
-      <h1>Ray James Design</h1>
-    </div>
+    <main>
+      <Hero />
+    </main>
   )
 }
