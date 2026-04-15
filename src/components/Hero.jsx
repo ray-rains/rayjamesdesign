@@ -3,7 +3,6 @@ import Dial from './Dial.jsx'
 export default function Hero() {
   return (
     <section className="hero">
-         <Dial navState={0} />
       <Dial navState={0} />
       <div className="hero__text">
         <img src="/arrowLargeEmboss.svg" className="hero__arrow" alt="" />
