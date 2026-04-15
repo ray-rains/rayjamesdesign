@@ -4,11 +4,11 @@ export default function FloatColumn() {
     { width: 4, height: 240, left: 12, delay: 0, duration: 36 },
     { width: 6, height: 480, left: 28, delay: 0, duration: 35 },
     { width: 4, height: 120, left: 44, delay: 0, duration: 30 },
-  { width: 50, height: 80, left: 60, delay: 0, duration: 54 },
+  { width: 12, height: 80, left: 60, delay: 0, duration: 54 },
   { width: 8, height: 210, left: 80, delay: 0, duration: 42 },
-  { width: 60, height: 40, left: 90, delay: 0, duration: 66 },
-    { width: 60, height: 10, left: 90, delay: 0, duration: 66 },
-  { width: 60, height: 4, left: 90, delay: 0, duration: 66 },
+  { width: 8, height: 40, left: 90, delay: 0, duration: 66 },
+    { width: 6, height: 10, left: 90, delay: 0, duration: 66 },
+  { width: 8, height: 4, left: 90, delay: 0, duration: 66 },
 
 
 ]

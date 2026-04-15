@@ -7,6 +7,7 @@ export default function Hero() {
       <Dial navState={0} />
       <FloatColumn />
       <img src="/arrowLargeEmboss.svg" className="hero__arrow" alt="" />
+      <img src="/chassisCircleLarge.svg" className="hero__circle" alt="" />
       <div className="hero__text">
         <h1 className="hero__headline">
           DESIGN IS NOT MEANT TO ORGANIZE CHAOS; BUT TO NAVIGATE IT.

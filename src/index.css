@@ -36,6 +36,12 @@
   --border-radius-l: 16px;
 }
 
+@keyframes holoWipe {
+  0% { left: -100vw; opacity: 1; }
+  60% { left: 0; opacity: 1; }
+  100% { left: 100vw; opacity: 0; }
+}
+
 @keyframes float {
   0% { transform: translateY(0); }
   50% { transform: translateY(-1px); }
@@ -51,8 +57,8 @@ html, body {
 }
 
 h1 {
-  font-family: var(--font-mono);
-  font-size: 5.625rem;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 4.5rem;
   color: var(--color-highlight);
   font-weight: 300;
   line-height: 110%;
@@ -94,24 +100,60 @@ h5 {
   gap: 88px;
 }
 
-@keyframes riseIn {
+@keyframes riseIn1 {
+  0% { 
+    opacity: 0; 
+    transform: translateY(4px) scale(0.98);
+    filter: blur(3px) drop-shadow(0px 0px 12px rgb(227,34,45, 0.5));
+  }
+  100% { 
+    opacity: 0.9; 
+    transform: translateY(0) scale(1);
+    filter: blur(0) drop-shadow(0px 0px 12px rgb(227,34,45, 0.7));
+  }
+}
+
+@keyframes riseIn2 {
   0% { 
     opacity: 0; 
     transform: translateY(8px) scale(0.98);
-    filter: blur(3px) drop-shadow(0px 10px 8px rgb(47, 47, 47, 0.3));
+    filter: blur(3px) drop-shadow(0px 0px 12px rgb(47,47,47, 0.3));
   }
   100% { 
-    opacity: 1; 
+    opacity: 0.9; 
     transform: translateY(0) scale(1);
-    filter: blur(0) drop-shadow(0px 10px 8px rgb(47, 47, 47, 0.3));
+    filter: blur(0) drop-shadow(0px 0px 12px rgb(47,47,47, 0.3));
   }
+}
+
+@keyframes dialRise {
+  0% { 
+    opacity: 0; 
+    transform: translateY(8px) scale(0.98);
+  }
+  100% { 
+    opacity: 0.9; 
+    transform: translateY(0) scale(1);
+  }
+}
+
+.dial {
+  position: fixed;
+  bottom: 40px;
+  right: 10%;
+  width: 272px;
+  height: 272px;
+  z-index: 15;
+  opacity: 0;
+  animation: dialRise 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
+  float 12s ease-in-out infinite 2.5s;
 }
 
 .hero__headline {
   max-width: 1072px;
   z-index: 20;
   opacity: 0;
-  animation: riseIn 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.1s,
+  animation: riseIn1 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
   float 12s ease-in-out infinite 2.5s;
 }
 
@@ -128,7 +170,7 @@ h5 {
 h4 {
   opacity: 0;
   animation: 
-    riseIn 2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
+    riseIn2 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
     float 12s ease-in-out infinite 2.5s;
 }
 
@@ -172,20 +214,20 @@ h4 {
   animation: fadeIn 0.6s ease forwards 3.4s;
 }
 
-.dial {
-  position: fixed;
-  bottom: 40px;
-  right:  10%;
-  width: 272px;
-  height: 272px;
-  z-index: 15;  
-}
-
 .hero__arrow {
   position: absolute;
   z-index: 10;
   top: 120px;
   right: 24px;
+  opacity: 0.5;
+  z-index: 10;
+}
+
+.hero__circle {
+  position: absolute;
+  z-index: 10;
+  top: 120px;
+  left: 24px;
   opacity: 0.5;
   z-index: 10;
 }
@@ -200,19 +242,20 @@ h4 {
   top: 0;
   left: 10%;
   width: 245px;
-  height: 150vh;
+  height: 100vh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   gap: 4px;
   pointer-events: none;
+  z-index: 11;
 }
 
 .float-rect {
   position: absolute
   width: 100%;
-  background: #000000;
-  opacity: 0.03;
+  background: #fff;
+  opacity: 0.5;
   border-radius: 2px;
   animation: floatDown linear infinite;
 }
