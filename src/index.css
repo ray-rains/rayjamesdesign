@@ -7,7 +7,7 @@
 :root {
   /* Colors */
   --color-primary: #DDD9D3;
-  --color-highlight: #E3222D;
+  --color-highlight: #D31D28;
   --color-main: #2F2F2F;  
 
   /* Color Semantics */
@@ -34,6 +34,12 @@
   --border-radius-s: 4px;
   --border-radius-m: 8px;
   --border-radius-l: 16px;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-1px); }
+  100% { transform: translateY(0); }
 }
 
 html, body {
@@ -65,7 +71,6 @@ h5 {
   font-size: 1.25rem;
   color: var(--color-text);
   font-weight: 300;
-  opacity: 0.75;
 }
 
 .hero {
@@ -73,10 +78,9 @@ h5 {
   min-height: 100vh;
   display: grid;
   grid-template-columns: 1fr auto;
-  align-items: start;
+  align-items: end;
   position: relative;
   justify-items: start;
-  left: 10%;
 }
 
 .hero__text {
@@ -84,17 +88,31 @@ h5 {
   position: relative;
   max-width: 1440px;
   flex-direction: column;
-  padding-top: 216px;
-  padding-left: 152px;
+  padding-top: 5%;
+  padding-left: 20%;
+  padding-bottom: 10%;
   gap: 88px;
-  z-index: 9;
+}
 
+@keyframes riseIn {
+  0% { 
+    opacity: 0; 
+    transform: translateY(8px) scale(0.98);
+    filter: blur(3px) drop-shadow(0px 10px 8px rgb(47, 47, 47, 0.3));
+  }
+  100% { 
+    opacity: 1; 
+    transform: translateY(0) scale(1);
+    filter: blur(0) drop-shadow(0px 10px 8px rgb(47, 47, 47, 0.3));
+  }
 }
 
 .hero__headline {
   max-width: 1072px;
   z-index: 20;
-
+  opacity: 0;
+  animation: riseIn 2.4s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.1s,
+  float 12s ease-in-out infinite 2.5s;
 }
 
 .hero__subtitle {
@@ -105,14 +123,53 @@ h5 {
   gap: var(--spacing-m);
   align-items: center;
   z-index: 20;
+}
 
+h4 {
+  opacity: 0;
+  animation: 
+    riseIn 2s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s,
+    float 12s ease-in-out infinite 2.5s;
 }
 
 .hero__role {
   display: flex;
   width: fit-content;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;  
   z-index: 20;
+  row-gap: var(--spacing-m);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.5; }
+}
+
+@keyframes fadeInFull {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.hero__role h5 {
+  opacity: 0;
+}
+
+.hero__role h5:nth-child(1) {
+  animation: fadeInFull 0.6s ease forwards 2.2s;
+}
+
+.hero__role h5:nth-child(2) {
+  animation: fadeIn 0.6s ease forwards 2.6s;
+}
+
+.hero__role h5:nth-child(3) {
+  animation: fadeIn 0.6s ease forwards 3.0s;
+}
+
+.hero__role h5:nth-child(4) {
+  animation: fadeIn 0.6s ease forwards 3.4s;
 }
 
 .dial {
@@ -130,4 +187,32 @@ h5 {
   top: 120px;
   right: 24px;
   opacity: 0.5;
+  z-index: 10;
+}
+
+@keyframes floatDown {
+  0% { transform: translateX(var(--x)) translateY(-150vh);}
+  100% { transform: translateX(var(--x)) translateY(100vh);}
+}
+
+.float-column {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  width: 245px;
+  height: 150vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+}
+
+.float-rect {
+  position: absolute
+  width: 100%;
+  background: #000000;
+  opacity: 0.03;
+  border-radius: 2px;
+  animation: floatDown linear infinite;
 }
