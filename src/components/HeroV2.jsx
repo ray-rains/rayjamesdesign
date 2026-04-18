@@ -1,4 +1,8 @@
 import Dial from './Dial.jsx'
+import Scanner from './Scanner.jsx'
+
+// inside JSX, replace <div id="subjectScan"><pre></pre></div> with:
+<Scanner objUrl="./uwak.obj" />
 
 export default function HeroV2() {
   return (
@@ -20,6 +24,7 @@ export default function HeroV2() {
 
       <section className="hero">
         <div className="hero__column">
+          <Dial navState={0} />
           <div className="hero__row hero__row--design">
             <div className="hero__designBox">
               <h1 className="hero__design">DESIGN</h1>
@@ -107,9 +112,10 @@ export default function HeroV2() {
               </div>
             </div>
           </div>
+          <div id="subjectScan">
+            <Scanner objUrl="/uwak.obj" />
+          </div>
         </div>
-
-        <Dial navState={0} />
       </section>
     </>
   )

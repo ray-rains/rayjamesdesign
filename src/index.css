@@ -6,7 +6,7 @@
 
 :root {
   /* Colors */
-  --color-primary: #EEEEEE;
+  --color-primary: #F8F3EC;
   --color-highlight: #E3222D;
   --color-main: #000000;  
 
@@ -40,12 +40,11 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #EEEEEE;
   min-height: 100vh;
 }
 
 body {
-  background: #eee;
+  background: var(--color-background);
 }
 
 /* animation */
@@ -67,12 +66,22 @@ body {
 .dial {
   position: fixed;
   bottom: 40px;
-  right: 10%;
+  right: calc(50vw - 384px - 288px);
   width: 272px;
   height: 272px;
   z-index: 15;
   opacity: 0;
   animation: dialRise 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s;
+}
+
+#subjectScan {
+
+  height: 473px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 /*navigation*/
@@ -126,7 +135,7 @@ body {
 .hero {
   width: 100%;
   min-height: 100vh;
-  background: #eee;
+  background: var(--color-background);
   display: flex;
   justify-content: center;
   position: relative;
@@ -141,6 +150,7 @@ body {
   flex-direction: column;
   position: relative;
   z-index: 90;
+  justify-items: center;
 }
 
 .hero__row {
