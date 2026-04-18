@@ -143,8 +143,6 @@ body {
 
 .hero__column {
   width: 768px;
-  background: rgba(238, 238, 238, .9);
-  color: #000;
   overflow: visible;
   display: flex;
   flex-direction: column;
