@@ -1,5 +1,7 @@
 import Dial from './Dial.jsx'
 import Scanner from './Scanner.jsx'
+import OscillatingHalftone from './OscillatingHalftone.jsx'
+import Chain from './Chain.jsx'
 
 // inside JSX, replace <div id="subjectScan"><pre></pre></div> with:
 <Scanner objUrl="./uwak.obj" />
@@ -9,12 +11,16 @@ export default function HeroV2() {
     <>
         <div id='top__spacer'></div>
       <nav className="navbar">
-        <div className="navbar__logo">RR</div>
-        <ul className="navbar__links">
-          <li>WORK</li>
-          <li>WORK</li>
-          <li>WORK</li>
-        </ul>
+        <div className="navbar__logo">
+          <img src="/public/logo.svg" alt="logo" width="44" height="48" />
+        </div>
+        <div className="navbar_right">
+          <ul className="navbar__links">
+            <li>WORKS</li>
+            <li>CREATIVE EXPLORATIONS</li>
+            <li>MANIFESTO</li>
+          </ul>
+        </div>
         <div className="navbar__dots">
           <span></span>
           <span></span>
@@ -31,13 +37,11 @@ export default function HeroV2() {
               <p className="hero__sub">is meant not to organize chaos;</p>
             </div>
             <div className="hero__gridPlaceholder">
-              <svg viewBox="0 0 365 200" xmlns="http://www.w3.org/2000/svg">
-              </svg>
+              <OscillatingHalftone />
             </div>
           </div>
 
         <div className='hero__separator'></div>
-
 
           <div className="hero__row hero__row--navigate">
             <div className="hero__chevrons">
@@ -73,48 +77,40 @@ export default function HeroV2() {
             <h3 className="hero__name">RAYMOND RAINSBERGER</h3>
             <div className="hero__row hero__row--title">
               <div className="hero__chain">
-                <svg viewBox="0 0 200 40" xmlns="http://www.w3.org/2000/svg">
-                  <ellipse cx="20" cy="20" rx="16" ry="12" fill="none" stroke="currentColor" strokeWidth="2" />
-                  <ellipse cx="50" cy="20" rx="16" ry="12" fill="none" stroke="currentColor" strokeWidth="2" />
-                  <ellipse cx="80" cy="20" rx="16" ry="12" fill="none" stroke="currentColor" strokeWidth="2" />
-                  <ellipse cx="110" cy="20" rx="16" ry="12" fill="none" stroke="currentColor" strokeWidth="2" />
-                  <ellipse cx="140" cy="20" rx="16" ry="12" fill="none" stroke="currentColor" strokeWidth="2" />
-                  <ellipse cx="170" cy="20" rx="16" ry="12" fill="none" stroke="currentColor" strokeWidth="2" />
-                </svg>
+                <Chain />
               </div>
-              <p className="hero__role">&gt;&gt;product design&lt;&lt;</p>
+              <div className="hero__title-text">
+               <p className="hero__role">&gt;&gt;product design&lt;&lt;</p>
+               <p className="hero__quote">
+                 the act of creation touches on the sublime. somewhere between the acts of thought and action, real magic happens.
+               </p>
+              </div>
             </div>
-            <p className="hero__quote">
-              the act of creation touches on the sublime. somewhere between the acts of thought and action, real magic happens.
-            </p>
-            <div className="hero__bottomRow">
+          </div>
+          <div className="hero__bottomRow">
               <div className="hero__globe">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                  <ellipse cx="12" cy="12" rx="4" ry="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
-                  <line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" strokeWidth="1.5" />
+                <svg viewBox="0 0 48  48" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="24" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <ellipse cx="24" cy="24" rx="9" ry="24" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <ellipse cx="24" cy="24" rx="18" ry="24" fill="none" stroke="currentColor" strokeWidth="2" />
+                  <line x1="0" y1="24" x2="48" y2="24" stroke="currentColor" strokeWidth="2" />
+                  <line x1="24" y1="0" x2="24" y2="48" stroke="currentColor" strokeWidth="2" />
                 </svg>
               </div>
               <div className="hero__ring">
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" strokeWidth="1.5" />
+                <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="24" cy="24" r="24" fill="none" stroke="currentColor" strokeWidth="1." />
                 </svg>
               </div>
               <div className="hero__hatchBar">
-                <svg viewBox="0 0 300 20" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-                  <defs>
-                    <pattern id="hatchBar" patternUnits="userSpaceOnUse" width="8" height="20" patternTransform="rotate(-45)">
-                      <line x1="0" y1="0" x2="0" y2="20" stroke="currentColor" strokeWidth="4" />
-                    </pattern>
-                  </defs>
-                  <rect width="300" height="20" fill="url(#hatchBar)" />
-                </svg>
+                <img src="/public/hazardBar.svg" alt="hazard lines" width="624" height="48" />              
               </div>
             </div>
-          </div>
+{/* 
           <div id="subjectScan">
             <Scanner objUrl="/uwak.obj" />
-          </div>
+          </div> 
+*/}
         </div>
       </section>
     </>
