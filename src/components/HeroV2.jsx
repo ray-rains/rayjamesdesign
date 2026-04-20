@@ -2,6 +2,7 @@ import Dial from './Dial.jsx'
 import Scanner from './Scanner.jsx'
 import OscillatingHalftone from './OscillatingHalftone.jsx'
 import Chain from './Chain.jsx'
+import ChaosText from './ChaosText.jsx'
 
 // inside JSX, replace <div id="subjectScan"><pre></pre></div> with:
 <Scanner objUrl="./uwak.obj" />
@@ -34,6 +35,12 @@ export default function HeroV2() {
           <div id="hero__borderElements">
             <div id="hero__borderElementsTopCorner"></div>
             <div id="hero__borderElementsBottomBoxes">
+              <div id="hero_borderElementsBarCode">
+                <div id="scan1"></div>
+                <div id="scan2"></div>
+                <div id="scan3"></div>
+                <div id="scan4"></div>
+              </div>
               <div id="hero_borderElementsBottomTallBar">
                 <div id="hero_borderElementsTallBarTop"></div>
                 <div id="hero_borderElementsTallBarMiddle"></div>
@@ -44,7 +51,7 @@ export default function HeroV2() {
           <div className="hero__row hero__row--design">
             <div className="hero__designBox">
               <h1 className="hero__design">DESIGN</h1>
-              <p className="hero__sub">is meant not to organize chaos;</p>
+              <p className="hero__sub">is meant not to organize <ChaosText /></p>
             </div>
             <div className="hero__gridPlaceholder">
               <OscillatingHalftone />
@@ -101,7 +108,7 @@ export default function HeroV2() {
               <div className="hero__title-text">
                <p className="hero__role">&gt;&gt;product design&lt;&lt;</p>
                <p className="hero__quote">
-                 the act of creation touches on the sublime. somewhere between the acts of thought and action, real magic happens.
+                 the act of creation touches on the sublime. somewhere between the moments of thought and action, real magic happens.
                </p>
               </div>
             </div>
