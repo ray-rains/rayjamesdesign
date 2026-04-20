@@ -12,7 +12,7 @@ export default function HeroV2() {
         <div id='top__spacer'></div>
       <nav className="navbar">
         <div className="navbar__logo">
-          <img src="/public/logo.svg" alt="logo" width="44" height="48" />
+          <img src="/logo.svg" alt="logo" width="44" height="48" />
         </div>
         <div className="navbar_right">
           <ul className="navbar__links">
@@ -103,7 +103,7 @@ export default function HeroV2() {
                 </svg>
               </div>
               <div className="hero__hatchBar">
-                <img src="/public/hazardBar.svg" alt="hazard lines" width="624" height="48" />              
+                <img src="/hazardBar.svg" alt="hazard lines" width="624" height="48" />              
               </div>
             </div>
 {/* 
