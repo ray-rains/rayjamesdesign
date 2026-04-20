@@ -167,7 +167,7 @@ body {
   transform-origin: right;
   opacity: 0;
   transform: scale(0);
-  animation: barCodeOpen 0.3s linear forwards 0.65s;
+  animation: barCodeOpen 0.1s linear forwards 0.65s;
 }
 
 #scan1{
