@@ -31,6 +31,16 @@ export default function HeroV2() {
       <section className="hero">
         <div className="hero__column">
           <Dial navState={0} />
+          <div id="hero__borderElements">
+            <div id="hero__borderElementsTopCorner"></div>
+            <div id="hero__borderElementsBottomBoxes">
+              <div id="hero_borderElementsBottomTallBar">
+                <div id="hero_borderElementsTallBarTop"></div>
+                <div id="hero_borderElementsTallBarMiddle"></div>
+                <div id="hero_borderElementsTallBarBottom"></div>
+              </div>
+            </div>
+          </div>
           <div className="hero__row hero__row--design">
             <div className="hero__designBox">
               <h1 className="hero__design">DESIGN</h1>
@@ -58,7 +68,16 @@ export default function HeroV2() {
             </div>
             <div className="hero__navigateText">
               <p className="hero__but">but to</p>
-              <h2 className="hero__navigate">NAVIGATE</h2>
+              <div className="hero__navigate">
+                NAVIGATE
+                <div className="hero__navigateCard">
+                    <div className="hero__navigateCircle">
+                    <svg viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="18" cy="18" r="16" fill="none" stroke="currentColor" strokeWidth="4" />
+                    </svg>
+                </div>
+                </div>
+              </div>
               <p className="hero__it">it</p>
             </div>
             <div className="hero__hatch">
@@ -99,7 +118,7 @@ export default function HeroV2() {
               </div>
               <div className="hero__ring">
                 <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="24" cy="24" r="24" fill="none" stroke="currentColor" strokeWidth="1." />
+                  <circle cx="24" cy="24" r="23" fill="none" stroke="currentColor" strokeWidth="1." />
                 </svg>
               </div>
               <div className="hero__hatchBar">

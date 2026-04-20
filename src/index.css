@@ -63,6 +63,8 @@ body {
 
 /* flourishes */
 
+  /* bg flourish */
+
 .dial {
   position: fixed;
   bottom: 40px;
@@ -74,8 +76,74 @@ body {
   animation: dialRise 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s;
 }
 
-#subjectScan {
+  /* content flourish */
+    /* hero */
 
+#hero__borderElements {
+  position: absolute;
+  display: flex;
+  width: 64px;
+  height: 1006px;
+  left: -76px;
+  top: -64px;
+  gap: 12px;
+  flex-direction: column;
+}
+
+#hero__borderElementsTopCorner {
+  position: relative;
+  display: flex;
+  width: 64px;
+  height: 64px;
+  border-style: solid;
+  border-width: 0px 1px 1px 0px;
+  border-color: var(--color-main);
+}
+
+#hero__borderElementsBottomBoxes {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: end;
+}
+
+#hero_borderElementsBottomTallBar {
+  position: relative;
+  display: flex;
+  height: 100%;
+  width: 12px;
+  flex-direction: column;
+  align-items: end;
+}
+
+#hero_borderElementsTallBarTop {
+  position: relative;
+  display: flex;
+  height: 210px;
+  width: 12px;
+  background: var(--color-main);
+}
+
+#hero_borderElementsTallBarMiddle {
+  position: relative;
+  display: flex;
+  height: 360px;
+  width: 8px;
+  background: var(--color-main);
+}
+
+#hero_borderElementsTallBarBottom {
+  position: relative;
+  display: flex;
+  height: 360px;
+  width: 2px;
+  background: var(--color-main);
+}
+
+    /* creative */
+
+#subjectScan {
   height: 473px;
   width: 100%;
   display: flex;
@@ -237,6 +305,7 @@ body {
 .hero__row--navigate {
   height: 191px;
   justify-content: end;
+  overflow: visible
 }
 
 .hero__chevrons {
@@ -252,6 +321,7 @@ body {
 }
 
 .hero__navigateText {
+  position: relative;
   height: 157px;
   padding-right: 12px;
   display: flex;
@@ -259,6 +329,26 @@ body {
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
+  overflow: visible;
+}
+
+.hero__navigateCard {
+  position: absolute;
+  display: flex;
+  width: 506px;
+  height: 100%;
+  left: -14px;
+  top: 0;
+  background: rgba( 227, 34, 45, 0.5);
+  z-index: -1;
+}
+
+.hero__navigateCircle {
+  position: absolute;
+  width: 36px;
+  height: 36px;
+  right: 10px;
+  color: var(--color-primary);
 }
 
 .hero__but {
@@ -270,6 +360,7 @@ body {
 }
 
 .hero__navigate {
+  position: relative;
   font-family: var(--font-mono);
   font-weight: 200;
   font-size: 56px;
