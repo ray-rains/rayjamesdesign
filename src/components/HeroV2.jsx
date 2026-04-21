@@ -3,11 +3,28 @@ import Scanner from './Scanner.jsx'
 import OscillatingHalftone from './OscillatingHalftone.jsx'
 import Chain from './Chain.jsx'
 import ChaosText from './ChaosText.jsx'
+import { useEffect, useRef } from 'react'
 
 // inside JSX, replace <div id="subjectScan"><pre></pre></div> with:
 <Scanner objUrl="./uwak.obj" />
 
 export default function HeroV2() {
+    const aboutRowRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fadeIn--active')
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }
+    )
+    if (aboutRowRef.current) observer.observe(aboutRowRef.current)
+    return () => observer.disconnect()
+  }, [])
+
   return (
     <>
         <div id='top__spacer'></div>
@@ -139,6 +156,72 @@ export default function HeroV2() {
 */}
         </div>
       </section>
+
+      <section className="about">
+        <div className="about__column">
+          <div className="about__row fadeIn--ready" ref={aboutRowRef}>            <div className="about__content">
+              <h2 className="about__headline">I am a Product Designer from Toledo, Ohio</h2>
+              <p className="about__body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+              <p className="about__body">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+                culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </div>
+            <div className="about__imageFrame">
+              <div className="about_imageBracketLeft"></div>
+              <img className="about_portrait" src="/portrait.webp" alt="An inverted pixelated image of a climber ascending the North Couloir of Mt. Thunderbolt"></img>
+              <div className="about_imageBracketRight"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="works">
+  <div className="works__column">
+
+    <div className="works__header">
+      <span className="works__number">01</span>
+      <span className="works__label">WORKS</span>
+    </div>
+
+    <div className="works__card">
+      <div className="works__cardImage">
+        <div className="works__imagePlaceholder" />
+        <div className="works__cardAccent" />
+      </div>
+      <div className="works__cardInfo">
+        <div className="works__role">
+          <svg width="575" height="6" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="5" x2="575" y2="5" stroke="black" strokewidth="2" />
+          </svg>         
+          WEB DESIGNER
+          </div>
+        <div className="works__bottomRow">
+          <div className="works__company">
+            <img src="/Sony_logo.png" alt="Sony Logo"></img>
+          </div>
+          <div className="works__meta">
+            <p className="works__skill">SYSTEMS DESIGN</p>
+            <p className="works__skill">UX RESEARCH & DESIGN</p>
+            <p className="works__skill">BRANDING & ICONOGRAPHY</p>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+    </section>
     </>
   )
 }
