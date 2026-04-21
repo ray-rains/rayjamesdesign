@@ -3,12 +3,13 @@ import Scanner from './Scanner.jsx'
 import OscillatingHalftone from './OscillatingHalftone.jsx'
 import Chain from './Chain.jsx'
 import ChaosText from './ChaosText.jsx'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 // inside JSX, replace <div id="subjectScan"><pre></pre></div> with:
 <Scanner objUrl="./uwak.obj" />
 
 export default function HeroV2() {
+    const [navState, setNavState] = useState(0)
     const aboutRowRef = useRef(null)
 
   useEffect(() => {
@@ -27,14 +28,14 @@ export default function HeroV2() {
 
   return (
     <>
-        <div id='top__spacer'></div>
+        <div id='top__spacer' id="top"></div>
       <nav className="navbar">
         <div className="navbar__logo">
-          <img src="/logo.svg" alt="logo" width="44" height="48" />
+          <a className="logo" href="#top" onClick={() => setNavState(0)}><img src="/logo.svg" alt="logo" width="44" height="48" /></a>
         </div>
         <div className="navbar_right">
           <ul className="navbar__links">
-            <li>WORKS</li>
+            <li><a href="#works" onClick={() => setNavState(1)}>WORKS</a></li>
             <li>CREATIVE EXPLORATIONS</li>
             <li>MANIFESTO</li>
           </ul>
@@ -48,7 +49,7 @@ export default function HeroV2() {
 
       <section className="hero">
         <div className="hero__column">
-          <Dial navState={0} />
+          <Dial navState={navState} />
           <div id="hero__borderElements">
             <div id="hero__borderElementsTopCorner"></div>
             <div id="hero__borderElementsBottomBoxes">
@@ -187,41 +188,130 @@ export default function HeroV2() {
         </div>
       </section>
 
-      <section className="works">
-  <div className="works__column">
+      <section className="works" id="works">
+        <div className="works__column">
 
-    <div className="works__header">
-      <span className="works__number">01</span>
-      <span className="works__label">WORKS</span>
-    </div>
-
-    <div className="works__card">
-      <div className="works__cardImage">
-        <div className="works__imagePlaceholder" />
-        <div className="works__cardAccent" />
-      </div>
-      <div className="works__cardInfo">
-        <div className="works__role">
-          <svg width="575" height="6" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="5" x2="575" y2="5" stroke="black" strokewidth="2" />
-          </svg>         
-          WEB DESIGNER
-          </div>
-        <div className="works__bottomRow">
-          <div className="works__company">
-            <img src="/Sony_logo.png" alt="Sony Logo"></img>
-          </div>
-          <div className="works__meta">
-            <p className="works__skill">SYSTEMS DESIGN</p>
-            <p className="works__skill">UX RESEARCH & DESIGN</p>
-            <p className="works__skill">BRANDING & ICONOGRAPHY</p>
+        <div className="section__header">
+          <span className="section__number">01</span>
+          <span className="section__label">WORKS</span>
         </div>
-        </div>
-      </div>
-    </div>
 
-  </div>
-    </section>
+        {/*-- sony --*/}
+            <div className="works__card">
+              <div className="works__cardImage">
+                <div className="works__imagePlaceholder" />
+                <div className="works__cardAccent" />
+              </div>
+              <div className="works__cardInfo">
+                <div className="works__role">
+                  <svg width="575" height="6" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="5" x2="575" y2="5" stroke="black" strokewidth="2" />
+                  </svg>         
+                  WEB DESIGNER
+                </div>
+                <div className="works__bottomRow">
+                  <div className="works__company">
+                    <img src="/Sony_logo.png" alt="Sony Logo"></img>
+                  </div>
+                  <div className="works__meta">
+                    <p className="works__skill">SYSTEMS DESIGN</p>
+                    <p className="works__skill">UX RESEARCH & DESIGN</p>
+                    <p className="works__skill">BRANDING & ICONOGRAPHY</p>
+                </div>
+                </div>
+              </div>
+              <div className="works__readMore">
+                  <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
+                  </svg> 
+                  <p>open project details</p>
+                  <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
+                  </svg> 
+              </div>
+            </div>
+
+        {/*-- leimert --*/}
+            <div className="works__card">
+              <div className="works__cardImage">
+                <div className="works__imagePlaceholder" />
+                <div className="works__cardAccent" />
+              </div>
+              <div className="works__cardInfo">
+                <div className="works__role">
+                  <svg width="519" height="6" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="5" x2="575" y2="5" stroke="black" strokewidth="2" />
+                  </svg>         
+                  MARKETING PARTNER
+                </div>
+                <div className="works__bottomRow">
+                  <div className="works__company">
+                    <img src="/Leimert_logo.png" alt="Leimert Mountaineering Logo"></img>
+                  </div>
+                  <div className="works__meta">
+                    <p className="works__skill">ANIMATION</p>
+                    <p className="works__skill">ILLUSTRATION</p>
+                    <p className="works__skill">VISUAL DEVELOPMENT</p>
+                </div>
+                </div>
+              </div>
+              <div className="works__readMore">
+                  <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
+                  </svg> 
+                  <p>open project details</p>
+                  <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
+                  </svg> 
+              </div>
+            </div>
+
+        {/*-- 211 --*/}
+            <div className="works__card">
+              <div className="works__cardImage">
+                <div className="works__imagePlaceholder" />
+                <div className="works__cardAccent" />
+              </div>
+              <div className="works__cardInfo">
+                <div className="works__role">
+                  <svg width="440" height="6" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="5" x2="575" y2="5" stroke="black" strokewidth="2" />
+                  </svg>         
+                  UI&UX DESIGNER/DEVELOPER
+                </div>
+                <div className="works__bottomRow">
+                  <div className="works__company">
+                    <img src="/TheFactory_logo.png" alt="The Factory Studios Logo"></img>
+                  </div>
+                  <div className="works__meta">
+                    <p className="works__skill">SYSTEMS DESIGN</p>
+                    <p className="works__skill">UNREAL ENGINE DEV</p>
+                    <p className="works__skill">VISUAL DEVELOPMENT</p>
+                </div>
+                </div>
+              </div>
+              <div className="works__readMore">
+                  <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
+                  </svg> 
+                  <p>open project details</p>
+                  <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
+                  </svg> 
+              </div>
+            </div>
+
+        </div>
+      </section>
+
+      <section className="creative" id="creative">
+        <div className="creative__column">
+          <div className="section__header2">
+            <span className="section__number">02</span>
+            <span className="section__label">WORKS</span>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
