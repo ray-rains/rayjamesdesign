@@ -261,7 +261,7 @@ body {
   right: calc(50vw - 400px - 288px);
   width: 272px;
   height: 272px;
-  z-index: 15;
+  z-index: 9999;
   opacity: 0;
   animation: dialRise 2.5s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.5s;
 }
@@ -450,7 +450,7 @@ body {
   top: 0;
   height: 56px;
   width: 768px;
-  z-index: 100;
+  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: space-between;

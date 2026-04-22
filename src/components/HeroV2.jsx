@@ -30,13 +30,13 @@ export default function HeroV2() {
         <div id='top__spacer' id="top"></div>
       <nav className="navbar">
         <div className="navbar__logo">
-          <a className="logo" href="#top" onClick={() => setNavState(0)}><img src="/logo.svg" alt="logo" width="44" height="48" /></a>
+          <a className="logo" href="#top" onClick={() => { setNavState(0); setActiveModal(null) }}><img src="/logo.svg" alt="logo" width="44" height="48" /></a>
         </div>
         <div className="navbar_right">
           <ul className="navbar__links">
-            <li><a href="#works" onClick={() => setNavState(1)}>WORKS</a></li>
-            <li><a href="#creative" onClick={() => setNavState(2)}>CREATIVE EXPLORATIONS</a></li>
-            <li><a href="#manifesto" onClick={() => setNavState(3)}>MANIFESTO</a></li>
+            <li><a href="#works" onClick={() => { setNavState(1);  setActiveModal(null) }}>WORKS</a></li>
+            <li><a href="#creative" onClick={() => { setNavState(2); setActiveModal(null) }}>CREATIVE EXPLORATIONS</a></li>
+            <li><a href="#manifesto" onClick={() => { setNavState(3); setActiveModal(null) }}>MANIFESTO</a></li>
           </ul>
         </div>
         <div className="navbar__dots">
@@ -44,11 +44,11 @@ export default function HeroV2() {
           <span></span>
           <span></span>
         </div>
+        <Dial navState={navState}/>
       </nav>
 
       <section className="hero">
         <div className="hero__column">
-          <Dial navState={navState} />
           <div id="hero__borderElements">
             <div id="hero__borderElementsTopCorner"></div>
             <div id="hero__borderElementsBottomBoxes">
