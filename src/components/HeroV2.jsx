@@ -4,12 +4,11 @@ import OscillatingHalftone from './OscillatingHalftone.jsx'
 import Chain from './Chain.jsx'
 import ChaosText from './ChaosText.jsx'
 import { useEffect, useRef, useState } from 'react'
-
-// inside JSX, replace <div id="subjectScan"><pre></pre></div> with:
-<Scanner objUrl="./uwak.obj" />
+import CaseStudyModal from './CaseStudyModal.jsx'
 
 export default function HeroV2() {
     const [navState, setNavState] = useState(0)
+    const [activeModal, setActiveModal] = useState(null)
     const aboutRowRef = useRef(null)
 
   useEffect(() => {
@@ -37,7 +36,7 @@ export default function HeroV2() {
           <ul className="navbar__links">
             <li><a href="#works" onClick={() => setNavState(1)}>WORKS</a></li>
             <li><a href="#creative" onClick={() => setNavState(2)}>CREATIVE EXPLORATIONS</a></li>
-            <li>MANIFESTO</li>
+            <li><a href="#manifesto" onClick={() => setNavState(3)}>MANIFESTO</a></li>
           </ul>
         </div>
         <div className="navbar__dots">
@@ -154,8 +153,29 @@ export default function HeroV2() {
       </section>
 
       <section className="about">
+        <div className='float-column'>
+          <div className="float-rect" style={{ '--x': '80px', width: '18px', height: '120px', background: '#000', animationDuration: '8s', animationDelay: '0s' }} />
+          <div className="float-rect" style={{ '--x': '140px', width: '18px', height: '80px', background: '#000', animationDuration: '11s', animationDelay: '-3s' }} />
+          <div className="float-rect" style={{ '--x': '260px', width: '14px', height: '100px', background: '#000', animationDuration: '9s', animationDelay: '-1s' }} />
+          <div className="float-rect" style={{ '--x': '380px', width: '20px', height: '140px', background: '#000', animationDuration: '13s', animationDelay: '-5s' }} />
+          <div className="float-rect" style={{ '--x': '460px', width: '12px', height: '60px', background: '#000', animationDuration: '7s', animationDelay: '-2s' }} />
+          <div className="float-rect" style={{ '--x': '540px', width: '16px', height: '110px', background: '#000', animationDuration: '10s', animationDelay: '-4s' }} />
+          <div className="float-rect" style={{ '--x': '620px', width: '22px', height: '90px', background: '#000', animationDuration: '12s', animationDelay: '-6s' }} />
+          <div className="float-rect" style={{ '--x': '700px', width: '14px', height: '130px', background: '#000', animationDuration: '9s', animationDelay: '-1.5s' }} />
+        </div>
         <div className="about__column">
-          <div className="about__row fadeIn--ready" ref={aboutRowRef}>            <div className="about__content">
+          <div className='about__hatch'>
+              <svg viewBox="0 0 33 298" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <pattern id="hatch" patternUnits="userSpaceOnUse" width="8" height="8" patternTransform="rotate(-45)">
+                    <line x1="8" y1="0" x2="0" y2="0" stroke="currentColor" strokeWidth="10" />
+                  </pattern>
+                </defs>
+                <rect width="33" height="298" fill="url(#hatch)" />
+              </svg>
+          </div>
+          <div className="about__row fadeIn--ready" ref={aboutRowRef}>            
+            <div className="about__content">
               <h6 className="about__headline">I am a Product Designer from Toledo, Ohio</h6>
               <p className="about__body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
@@ -215,7 +235,7 @@ export default function HeroV2() {
                 </div>
                 </div>
               </div>
-              <div className="works__readMore">
+              <div className="works__readMore" onClick={() => setActiveModal('sony')}>
                   <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
                   </svg> 
@@ -250,7 +270,7 @@ export default function HeroV2() {
                 </div>
                 </div>
               </div>
-              <div className="works__readMore">
+              <div className="works__readMore" onClick={() => setActiveModal('leimert')}>
                   <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
                   </svg> 
@@ -285,7 +305,7 @@ export default function HeroV2() {
                 </div>
                 </div>
               </div>
-              <div className="works__readMore">
+              <div className="works__readMore" onClick={() => setActiveModal('211')}>
                   <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
                   </svg> 
@@ -372,7 +392,7 @@ export default function HeroV2() {
           </div>
           <div className='creative__bentoBox2'>
             <div className='bento2__Left'>
-              <div className='bento2__Header'>COMICS</div>
+              <div className='bento2__Header'>ILLUSTRATION</div>
               <div className='bento2__LeftTop'>
 
               </div>
@@ -384,8 +404,54 @@ export default function HeroV2() {
               <div className='bento2__Arrow'></div>
             </div>
           </div>
+          <div className='bento2__floatBox'>
+            <img src='/GunBorgSkirmisher.jpg' alt='Card art for Full Auto TCG'></img>
+          </div>
         </div>
       </section>
+
+
+      <section className='manifesto' id='manifesto'>
+        <div className='manifesto__column'>
+          <div className="section__header3">
+            <span className="section__number">03</span>
+            <span className="section__label">MANI<br></br>FESTO</span>
+          </div>
+        </div>
+      </section>
+
+        <CaseStudyModal
+          title="SONY ELECTRONICS"
+          role="WEB DESIGNER"
+          skills={['SYSTEMS DESIGN', 'UX RESEARCH & DESIGN', 'BRANDING & ICONOGRAPHY']}
+          heroImage="/Sony_hero.jpg"
+          isOpen={activeModal === 'sony'}
+          onClose={() => setActiveModal(null)}
+        >
+          <p>Your case study content here</p>
+        </CaseStudyModal>
+
+        <CaseStudyModal
+          title="LEIMERT MOUNTAINEERING"
+          role="MARKETING PARTNER"
+          skills={['ANIMATION', 'ILLUSTRATION', 'VISUAL DEVELOPMENT']}
+          heroImage="/Leimert_hero.jpg"
+          isOpen={activeModal === 'leimert'}
+          onClose={() => setActiveModal(null)}
+        >
+          <p>Your case study content here</p>
+        </CaseStudyModal>
+
+        <CaseStudyModal
+          title="THE FACTORY STUDIOS"
+          role="UI&UX DESIGNER/DEVELOPER"
+          skills={['SYSTEMS DESIGN', 'UNREAL ENGINE DEV', 'VISUAL DEVELOPMENT']}
+          heroImage="/TheFactory_hero.jpg"
+          isOpen={activeModal === '211'}
+          onClose={() => setActiveModal(null)}
+        >
+          <p>Your case study content here</p>
+        </CaseStudyModal>
     </>
   )
 }

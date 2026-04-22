@@ -51,6 +51,139 @@ body {
   background: var(--color-background);
 }
 
+/* modal */
+
+.works__readMore {
+  cursor: pointer;
+}
+
+.works__readMore:hover {
+  opacity: 1;
+}
+
+.modal__overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--color-background);
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: auto;
+  opacity: 0;
+}
+
+.modal__scanBar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  /* scan bar color — change background here */
+  background: var(--color-highlight);
+  z-index: 1001;
+  transform: translateY(-3px);
+}
+
+.modal__scanline {
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 0, 0, 0.03) 2px,
+    rgba(0, 0, 0, 0.03) 4px
+  );
+  pointer-events: none;
+  z-index: 1001;
+  opacity: 0;
+}
+
+.modal__content {
+  width: 768px;
+  padding: 64px 0 120px;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+.modal__hero {
+  width: 100%;
+  height: 412px;
+  background: #ccc;
+  margin-bottom: 32px;
+}
+
+.modal__hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.modal__header {
+  margin-bottom: 48px;
+}
+
+.modal__title {
+  font-family: var(--font-mono);
+  font-weight: 200;
+  font-size: 3.5rem;
+  letter-spacing: 0.1em;
+  line-height: 110%;
+  color: var(--color-main);
+  margin-bottom: 8px;
+}
+
+.modal__role {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 1rem;
+  letter-spacing: 0.15em;
+  color: var(--color-main);
+  margin-bottom: 16px;
+}
+
+.modal__skills {
+  display: flex;
+  gap: 24px;
+}
+
+.modal__skill {
+  font-family: var(--font-mono);
+  font-weight: 300;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  opacity: 0.6;
+}
+
+.modal__body {
+  width: 100%;
+}
+
+.modal__close {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 350;
+  letter-spacing: 0.1em;
+  color: var(--color-main);
+  background: none;
+  border: none;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal__close:hover {
+  opacity: 0.5;
+}
+
 /* animation */
 
 .fadeIn--ready {
@@ -62,6 +195,32 @@ body {
 .fadeIn--active {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes floatDown {
+  0% { transform: translateX(var(--x)) translateY(0); opacity: 0.1;}
+  100% { transform: translateX(var(--x)) translateY(540px); opacity: 0;}
+}
+
+.float-column {
+  position: absolute;
+  top: -200px;
+  width: 768px;
+  height: 540px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.float-rect {
+  position: absolute;
+  width: 100%;
+  opacity: 0.5;
+  border-radius: 2px;
+  animation: floatDown linear infinite;
 }
 
 @keyframes dialRise {
@@ -367,7 +526,6 @@ body {
 
 .hero {
   width: 100%;
-  background: var(--color-background);
   display: flex;
   justify-content: center;
   position: relative;
@@ -630,7 +788,6 @@ body {
   padding-top: 180px;
   padding-bottom: 108px;
   width: 100%;
-  background: var(--color-background);
   display: flex;
   justify-content: center;
   position: relative;
@@ -723,11 +880,25 @@ body {
   border-style: solid;
 }
 
+.about__hatch {
+  position: absolute;
+  left: -44px;
+  bottom: 0;
+  width: 33px;
+  height: 298px;
+  color: #000;
+  opacity: 0.8;
+}
+
+.about__hatch svg {
+  width: 100%;
+  height: 100%;
+}
+
 /* works */
 
 .works {
   width: 100%;
-  background: var(--color-background);
   display: flex;
   justify-content: center;
   position: relative;
@@ -885,7 +1056,6 @@ body {
 
 .creative {
   width: 100%;
-  background: var(--color-background);
   display: flex;
   justify-content: center;
   position: relative;
@@ -1026,6 +1196,7 @@ body {
   width: 100%;
   height: 624px;
   border: 1px solid var(--color-main);
+  margin-bottom: 24px;
 }
 
 .bento2__Left {
@@ -1080,4 +1251,47 @@ body {
   height: 168px;
   width: 168px;
   border: 8px solid var(--color-main);
+}
+
+.bento2__floatBox {
+  display: flex;
+  position: relative;
+  width: 100%;
+  height: 280px;
+  background: var(--color-main);
+}
+
+/* manifesto */
+
+.manifesto {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 72px;
+  margin-bottom: 120px;
+}
+
+.manifesto__column {
+  width: 768px;
+  overflow: visible;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 90;
+  align-items: end;
+}
+
+.section__header3 {
+  display: flex;
+  position: relative;
+  right: 574px;
+  align-items: stretch;
+  background: var(--color-highlight);
+  color: #fff;
+  width: 400%;
+  height: 104px;
+  overflow: visible;
+  margin-bottom: 108px;
+  padding-right: 6px;
 }
