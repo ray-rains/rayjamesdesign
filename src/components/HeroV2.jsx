@@ -36,7 +36,7 @@ export default function HeroV2() {
         <div className="navbar_right">
           <ul className="navbar__links">
             <li><a href="#works" onClick={() => setNavState(1)}>WORKS</a></li>
-            <li>CREATIVE EXPLORATIONS</li>
+            <li><a href="#creative" onClick={() => setNavState(2)}>CREATIVE EXPLORATIONS</a></li>
             <li>MANIFESTO</li>
           </ul>
         </div>
@@ -150,18 +150,13 @@ export default function HeroV2() {
                 <img src="/hazardBar.svg" alt="hazard lines" width="624" height="48" />              
               </div>
             </div>
-{/* 
-          <div id="subjectScan">
-            <Scanner objUrl="/uwak.obj" />
-          </div> 
-*/}
         </div>
       </section>
 
       <section className="about">
         <div className="about__column">
           <div className="about__row fadeIn--ready" ref={aboutRowRef}>            <div className="about__content">
-              <h2 className="about__headline">I am a Product Designer from Toledo, Ohio</h2>
+              <h6 className="about__headline">I am a Product Designer from Toledo, Ohio</h6>
               <p className="about__body">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                 incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
@@ -308,7 +303,86 @@ export default function HeroV2() {
         <div className="creative__column">
           <div className="section__header2">
             <span className="section__number">02</span>
-            <span className="section__label">WORKS</span>
+            <span className="section__label">CREATIVE EXPLORATI<br></br>ONS</span>
+          </div>
+          <div className="creative__bentoBox1">
+            <div className="bento1__top">
+              <div className="bento1__topLeft">
+
+              </div>
+              <div className="bento1__topRight">
+                <div className='bento1__header'>ANIMATION</div>
+              </div>
+            </div>
+            <div className="bento1__bottom"></div>
+          </div>
+          <div className='creative__code'>
+            <div className='creative__codeLeft'>
+              <div className="creative__barcode">
+                <img src="/barCodeCreative.svg" alt="barcode" width="208" height="198" />   
+              </div>
+              <div className='creative__neocities'>subject: r.rainsberger / unit_designation: uwak
+                scan_protocol: v3.7.alpha // astr4l_data_conversion
+
+                ph4se 01 // organic_substrate_mapping
+                  the living form was first rendered in 2d sigil-space. 
+                  graphite-to-vector transcription. contour harvesting 
+                  complete. biological noise: filtered. soul-geometry: 
+                  preserved.
+
+                ph4se 02 // dimensional_extrusion
+                  planar data folded into z-axis. mesh bones threaded 
+                  through the subject's silhouette like copper wire 
+                  through wet clay. vertex count: acceptable. 
+                  poly-flesh: stable.
+
+                ph4se 03 // astr4l_dissolution
+                  blender-chamber engaged. the subject's form subjected 
+                  to uv-unwrapping. skin peeled back into flat maps. 
+                  normals baked. what was once a body is now 
+                  a data-texture draped over hollow geometry.
+
+                ph4se 04 // obj_extraction
+                  .obj filetype: confirmed. the subject exported 
+                  from simulation into raw coordinate space. 
+                  no longer flesh. no longer drawing. 
+                  pure positional data. 
+                  x / y / z.
+
+                ph4se 05 // runtime_manifestation
+                  three.js invoked. the coordinate lattice 
+                  summoned back from the void into screenspace. 
+                  the subject now exists as gl_buffer_data. 
+                  rendered per frame. 
+                  alive only while the loop runs.
+
+                  status: c0nv3rs10n_compl3te
+                  w4rning: subject no longer biological
+                  w4rning: subject no longer drawable  
+                  w4rning: subject is now r34l-time geometry
+                  
+                  // end_transmission
+              </div>
+            </div>
+            <div className='creative__codeRight'>
+              <div id="subjectScan">
+                <Scanner objUrl="/uwak.obj" />
+              </div> 
+            </div>
+          </div>
+          <div className='creative__bentoBox2'>
+            <div className='bento2__Left'>
+              <div className='bento2__Header'>COMICS</div>
+              <div className='bento2__LeftTop'>
+
+              </div>
+              <div className='bento2__LeftBottom'>
+
+              </div>
+            </div>
+            <div className='bento2__Right'>
+              <div className='bento2__Arrow'></div>
+            </div>
           </div>
         </div>
       </section>

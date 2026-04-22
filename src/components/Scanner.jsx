@@ -59,7 +59,7 @@ export default function Scanner({ objUrl = '/uwak.obj' }) {
 
       for (let row = 0; row < rows; row++)
         for (let col = 0; col < cols; col++)
-          cubeArray[row][col] = '.';
+          cubeArray[row][col] = ' ';
 
       for (const point of points) {
         const rotatedX = point.x * Math.cos(angleY) + point.z * Math.sin(angleY);
@@ -107,7 +107,7 @@ export default function Scanner({ objUrl = '/uwak.obj' }) {
     <div id="subjectScan">
      <pre ref={preRef} style={{
   fontFamily: 'VT323, monospace',
-  fontSize: '6px',
+  fontSize: '8px',
   lineHeight: '1',
   letterSpacing: '0.05em',
 }} />
