@@ -109,9 +109,9 @@ body {
 
 .modal__hero {
   width: 100%;
-  height: 412px;
+  height: 120px;
   background: #ccc;
-  margin-bottom: 32px;
+  margin-bottom: 16px;
 }
 
 .modal__hero img {
@@ -121,7 +121,7 @@ body {
 }
 
 .modal__header {
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 }
 
 .modal__title {
@@ -158,6 +158,7 @@ body {
 
 .modal__body {
   width: 100%;
+  font-family: 'Jost';
 }
 
 .modal__close {
@@ -185,6 +186,36 @@ body {
 }
 
 /* animation */
+
+.card--ready {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.card--ready.card--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.works__imagePlaceholder,
+.works__cardInfo {
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card--revealed .works__imagePlaceholder {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+
+.card--revealed .works__cardInfo {
+  opacity: 1;
+  transform: translateX(0);
+  transition-delay: 0.1s;
+}
 
 .fadeIn--ready {
   opacity: 0;
@@ -1295,3 +1326,4 @@ body {
   margin-bottom: 108px;
   padding-right: 6px;
 }
+

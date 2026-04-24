@@ -11,6 +11,38 @@ export default function HeroV2() {
     const [activeModal, setActiveModal] = useState(null)
     const aboutRowRef = useRef(null)
 
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fadeIn--active')
+            observer.disconnect()
+          }
+        },
+        { threshold: 0.2 }
+      )
+      if (aboutRowRef.current) observer.observe(aboutRowRef.current)
+      return () => observer.disconnect()
+    }, [])
+
+    useEffect(() => {
+      const cards = document.querySelectorAll('.works__card')
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('card--visible')
+            setTimeout(() => {
+              entry.target.classList.add('card--revealed')
+            }, 800)
+            observer.unobserve(entry.target)
+          }
+        },
+        { threshold: 0.2 }
+      )
+      cards.forEach(card => observer.observe(card))
+      return () => observer.disconnect()
+    }, [])
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -212,10 +244,13 @@ export default function HeroV2() {
         </div>
 
         {/*-- sony --*/}
-            <div className="works__card">
+            <div className="works__card card--ready">
               <div className="works__cardImage">
-                <div className="works__imagePlaceholder" />
-                <div className="works__cardAccent" />
+                <div className="works__imagePlaceholder" >
+                  <img src='/SonyBanner.webp' alt='Sony Electronics DTC Platform'></img>
+                </div>
+                <div className="works__cardAccent" >
+                </div>
               </div>
               <div className="works__cardInfo">
                 <div className="works__role">
@@ -247,9 +282,11 @@ export default function HeroV2() {
             </div>
 
         {/*-- leimert --*/}
-            <div className="works__card">
+            <div className="works__card card--ready">
               <div className="works__cardImage">
-                <div className="works__imagePlaceholder" />
+                <div className="works__imagePlaceholder" >
+                  <img src='/LeimertBanner.webp' alt='Leimert Ad Image'></img>
+                 </div> 
                 <div className="works__cardAccent" />
               </div>
               <div className="works__cardInfo">
@@ -282,9 +319,11 @@ export default function HeroV2() {
             </div>
 
         {/*-- 211 --*/}
-            <div className="works__card">
+            <div className="works__card card--ready">
               <div className="works__cardImage">
-                <div className="works__imagePlaceholder" />
+                <div className="works__imagePlaceholder" >
+                  <img src='/211Banner.webp' alt='211: Heist UI Process'></img>
+                </div>
                 <div className="works__cardAccent" />
               </div>
               <div className="works__cardInfo">
@@ -424,7 +463,7 @@ export default function HeroV2() {
           title="SONY ELECTRONICS"
           role="WEB DESIGNER"
           skills={['SYSTEMS DESIGN', 'UX RESEARCH & DESIGN', 'BRANDING & ICONOGRAPHY']}
-          heroImage="/Sony_hero.jpg"
+          heroImage="/SonyBanner.webp"
           isOpen={activeModal === 'sony'}
           onClose={() => setActiveModal(null)}
         >
@@ -435,7 +474,7 @@ export default function HeroV2() {
           title="LEIMERT MOUNTAINEERING"
           role="MARKETING PARTNER"
           skills={['ANIMATION', 'ILLUSTRATION', 'VISUAL DEVELOPMENT']}
-          heroImage="/Leimert_hero.jpg"
+          heroImage="/LeimertBanner.webp"
           isOpen={activeModal === 'leimert'}
           onClose={() => setActiveModal(null)}
         >
@@ -446,7 +485,7 @@ export default function HeroV2() {
           title="THE FACTORY STUDIOS"
           role="UI&UX DESIGNER/DEVELOPER"
           skills={['SYSTEMS DESIGN', 'UNREAL ENGINE DEV', 'VISUAL DEVELOPMENT']}
-          heroImage="/TheFactory_hero.jpg"
+          heroImage="/211Banner.webp"
           isOpen={activeModal === '211'}
           onClose={() => setActiveModal(null)}
         >

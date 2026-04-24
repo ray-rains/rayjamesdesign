@@ -80,7 +80,6 @@ export default function CaseStudyModal({ title, role, skills, heroImage, isOpen,
       <div className="modal__scanline" ref={scanlineRef} />
       <div className="modal__content" ref={contentRef}>
         <div className="modal__hero">
-          {heroImage && <img src={heroImage} alt={title} />}
         </div>
         <div className="modal__header">
           <h2 className="modal__title">{title}</h2>
