@@ -51,6 +51,7 @@ body {
   background: var(--color-background);
 }
 
+@media (min-width: 769px) {
 main::before {
   content: '';
   position: fixed;
@@ -77,6 +78,7 @@ main::after {
     transparent 20%,
     rgba(0, 0, 0, 0.15) 100%
   );
+}
 }
 
 /* modal */
