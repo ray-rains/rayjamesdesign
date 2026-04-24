@@ -250,6 +250,9 @@ export default function HeroV2() {
                   <img src='/SonyBanner.webp' alt='Sony Electronics DTC Platform'></img>
                 </div>
                 <div className="works__cardAccent" >
+                  <div className='works__AccentLogo'>
+                    <img src='/SonyAccent.webp' alt='Sony brands under DTC banner'></img>
+                  </div>
                 </div>
               </div>
               <div className="works__cardInfo">
@@ -287,7 +290,17 @@ export default function HeroV2() {
                 <div className="works__imagePlaceholder" >
                   <img src='/LeimertBanner.webp' alt='Leimert Ad Image'></img>
                  </div> 
-                <div className="works__cardAccent" />
+                <div className="works__cardAccent" >
+                  <div style={{ left: '-52px' }} className='works__AccentImage'>
+                    <video width="289" height="289" autoPlay loop muted playsInline>
+                      <source src="/LeimertAccent.mp4" type="video/mp4"></source>
+                      Your browser does not support the video tag.
+                    </video>
+                  </div>
+                  <div className='works__AccentLogo'>
+                    <img src='/LeimertAccentLogo.webp' alt='Leimert logo'></img>
+                  </div>
+                </div>
               </div>
               <div className="works__cardInfo">
                 <div className="works__role">
@@ -324,7 +337,11 @@ export default function HeroV2() {
                 <div className="works__imagePlaceholder" >
                   <img src='/211Banner.webp' alt='211: Heist UI Process'></img>
                 </div>
-                <div className="works__cardAccent" />
+                <div className="works__cardAccent">
+                  <div className='works__AccentLogo'>
+                    <img src='/211Accent.webp' alt='211 logo'></img>
+                  </div>
+                </div>
               </div>
               <div className="works__cardInfo">
                 <div className="works__role">
@@ -344,11 +361,11 @@ export default function HeroV2() {
                 </div>
                 </div>
               </div>
-              <div className="works__readMore" onClick={() => setActiveModal('211')}>
+              <div className="works__readMore" /*onClick={() => setActiveModal('211')}*/>
                   <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
                   </svg> 
-                  <p>open project details</p>
+                  <p>development in progress</p>
                   <svg width="44" height="18" xmlns="http://www.w3.org/2000/svg">
                     <line x1="0" y1="9" x2="44" y2="9" stroke="black" strokewidth="2" />
                   </svg> 
