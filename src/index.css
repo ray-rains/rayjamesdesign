@@ -51,7 +51,7 @@ body {
   background: var(--color-background);
 }
 
-@media (min-width: 769px) {
+@media (min-width: 920px) {
 main::before {
   content: '';
   position: fixed;
