@@ -51,6 +51,34 @@ body {
   background: var(--color-background);
 }
 
+main::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.04) 0px,
+    rgba(0, 0, 0, 0.12) 3px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+main::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  background: radial-gradient(
+    circle at center,
+    transparent 20%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
 /* modal */
 
 .works__readMore {
