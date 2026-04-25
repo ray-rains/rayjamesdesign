@@ -10,6 +10,18 @@ export default function HeroV2() {
     const [navState, setNavState] = useState(0)
     const [activeModal, setActiveModal] = useState(null)
     const aboutRowRef = useRef(null)
+    const [submitState, setSubmitState] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
+
+    const handleSubmit = async () => {
+      setSubmitState('sending')
+      try {
+        // your form submission logic here
+        await new Promise(resolve => setTimeout(resolve, 1500)) // placeholder
+        setSubmitState('success')
+      } catch {
+        setSubmitState('error')
+      }
+    }
 
     useEffect(() => {
       const observer = new IntersectionObserver(
@@ -451,14 +463,57 @@ export default function HeroV2() {
             <div className='bento2__Left'>
               <div className='bento2__Header'>ILLUSTRATION</div>
               <div className='bento2__LeftTop'>
-
+                <div className='bento2__Title'>
+                  <p>Freelancer with Lesser Known Comics since 2021</p>
+                </div>
+                <div className='bento2__Roles'>
+                  <div className='bento2__RolesLeft'>
+                    <p>
+                      Comicbook Illustration<br/>
+                      Character Design<br/>
+                      Storyboarding
+                    </p>
+                  </div>
+                  <div className='bento2__RolesRight'>
+                    <p>
+                      WIPs:<br/>
+                      Full Auto TCG<br/>
+                      Tongue Twizards<br/>
+                      Wastelands #2
+                    </p>
+                  </div>
+                </div>
               </div>
               <div className='bento2__LeftBottom'>
-
+                <div style={{marginLeft: '10px'}} className='bento2__Panels'>
+                  <img src='/Oni.jpg' alt='Oni Warlock' />
+                </div>
+                <div style={{marginLeft: '20px'}} className='bento2__Panels'>
+                  <img src='/LucidHol.jpg' alt='Panel from LUCID tie-in comic' />
+                </div>
+                <div style={{marginLeft: '28px'}} className='bento2__Panels'>
+                  <img src='/Skirmisher.jpg' alt='Card art for Full Auto TCG' />
+                </div>
+                <div style={{marginLeft: '28px'}} className='bento2__Panels'>
+                  <img src='/WitchBolt.jpg' alt='WitchBolt character art' />
+                </div>
+                <div style={{marginLeft: '20px'}} className='bento2__Panels'>
+                  <img src='/WastelandsIssue2.jpg' alt='Preview of Wastelands Issue no.2' />
+                </div>
               </div>
             </div>
             <div className='bento2__Right'>
-              <div className='bento2__Arrow'></div>
+              <div className='bento2__RightTop'>
+                <div className='bento2__Arrow'></div>
+              </div>
+              <div className='bento2__RightBottom'>
+                <div className='bento2__ViewMore'>
+                  
+                </div>
+                <div className='bento2__Works'>
+
+                </div>
+              </div>
             </div>
           </div>
           <div className='bento2__floatBox'>
@@ -554,27 +609,53 @@ export default function HeroV2() {
         <div className='contact__fields'>
           <label className='contact__label'>EMAIL</label>
           <input className='contact__input' type='email' />
-          <label className='contact__label'>MESSAGE</label>
-          <textarea className='contact__textarea'></textarea>
-          <div className='contact__submit'>
-            <span>▶</span>
-            <span>■</span>
+          <div className='contact__bottom'>
+            <div className='contact__message'>
+              <label className='contact__label'>MESSAGE</label>
+              <textarea className='contact__textarea'></textarea>
+            </div>
+            <div className='contact__submit'>
+              <div 
+                className={`contact__send ${submitState === 'sending' ? 'contact__send--sending' : ''}`}
+                onClick={handleSubmit}
+              >
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                  <polygon points="2,2 22,12 2,22" fill="currentColor" />
+                </svg>
+              </div>
+              <div className={`contact__status contact__status--${submitState}`}>
+                {submitState === 'success' && (
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <polyline points="4,12 10,18 20,6" fill="none" stroke="currentColor" strokeWidth="2.5" />
+                  </svg>
+                )}
+                {submitState === 'error' && (
+                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" strokeWidth="2.5" />
+                    <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" strokeWidth="2.5" />
+                  </svg>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       </div>
       <div className='contact__right'>
         <div className='contact__cross'>
           <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="8" />
-            <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="8" />
+            <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="2" />
+            <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="2" />
           </svg>
         </div>
         <div className='contact__globe'>
           <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
             <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <ellipse cx="24" cy="24" rx="10" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
-            <ellipse cx="24" cy="24" rx="20" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <ellipse cx="24" cy="24" rx="12" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <ellipse cx="24" cy="24" rx="18" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <ellipse cx="24" cy="24" rx="6" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
             <line x1="2" y1="24" x2="46" y2="24" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="24" y1="2" x2="24" y2="46" stroke="currentColor" strokeWidth="1.5" />
+
           </svg>
         </div>
       </div>
