@@ -59,6 +59,7 @@ export default function HeroV2() {
 
   return (
     <>
+    <div className='background__grid' />
         <div id='top__spacer' id="top"></div>
       <nav className="navbar">
         <div className="navbar__logo">
@@ -473,7 +474,114 @@ export default function HeroV2() {
             <span className="section__number">03</span>
             <span className="section__label">MANI<br></br>FESTO</span>
           </div>
+
+  <div className='manifesto__panel'>
+      <div className='manifesto__panelLeft'>
+        <div className='manifesto__marker'></div>
+        <div className='manifesto__crosshair'>
+          <svg viewBox="0 0 80 172" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="40" cy="86" rx="18" ry="36" fill="none" stroke="currentColor" strokeWidth="1" />
+            <line x1="0" y1="86" x2="80" y2="86" stroke="currentColor" strokeWidth="1" />
+            <line x1="40" y1="0" x2="40" y2="172" stroke="currentColor" strokeWidth="1" />
+          </svg>
         </div>
+        <div style={{position: 'absolute', top: '215px', left: '16px'}} className='manifesto__dash'></div>
+        <div style={{position: 'absolute', top: '349px', left: '16px'}}className='manifesto__dash'></div>
+        <div style={{position: 'absolute', top: '362px', left: '16px'}}className='manifesto__dash'></div>
+        <div className='manifesto__panelBottom'>
+          <div className='manifesto__square'></div>
+          <div className='manifesto__square'></div>
+          <div className='manifesto__square'></div>
+        </div>
+      </div>
+      <div className='manifesto__panelRight'>
+        <p className='manifesto__text'>I believe</p>
+        <p className='manifesto__body'>
+          That magic is everywhere: not as a supernatural force, but in the space between The Question and The Answer. I believe that thorough exploration and explanation does not reduce the mystery of the grand design - be it shaped by hand or natural consequence.
+        </p>
+        <p className='manifesto__body'>
+          And I believe that the only Universal Truth shared among all humans is The Satisfaction Of A Job Well Done.
+        </p>
+        <p className='manifesto__text'>The act of creation</p>
+        <p className='manifesto__body'>
+          Is not unique to humans nor to life. It is the one thing that every participant of the cosmic clockwork shares in common. Every variable in the equation contributes to the turning of the wheel. To be human is to hold the privilege of the ability to take note of these greater machinations.
+        </p>
+        <p className='manifesto__center'>To exist is to create.<br/>To be human is to stress the details.<br/>The process is the point.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section className='contact' id='contact'>
+  <div className='contact__column'>
+    <h2 className='contact__header'>CONTACT</h2>
+    <div className='contact__barcode'>
+      <img src='/ContactBarcode.svg' alt='barcode' width='100%' />
+    </div>
+    <div className='contact__body'>
+      <div className='contact__left'>
+        <img src='/ContactBottomBars.svg' alt="flourish" />
+      </div>
+      <div className='contact__formArea'>
+        <div className='contact__socials'>
+          <div className='contact__links'>
+            <div className='contact__linkSquare' />
+            <a href='#'>LINKEDIN</a>
+          </div>
+          <div className='contact__links'>
+            <div className='contact__linkSquare' />
+            <a href='#'>TWITTER</a>
+          </div>
+          <div className='contact__links'>
+            <div className='contact__linkSquare' />
+            <a href='#'>INSTAGRAM</a>
+          </div>
+          <div className='contact__links'>
+            <div className='contact__linkSquare' />
+            <a href='#'>YOUTUBE</a>
+          </div>
+        </div>
+        <div className='contact__socials'>
+          <div className='contact__links'>
+            <div className='contact__linkSquare' />
+            <a href='#'>RESUME</a>
+          </div>
+          <div className='contact__links'>
+            <div className='contact__linkSquare' />
+            <a href='#'>EMAIL</a>
+          </div>
+        </div>
+        <div className='contact__fields'>
+          <label className='contact__label'>EMAIL</label>
+          <input className='contact__input' type='email' />
+          <label className='contact__label'>MESSAGE</label>
+          <textarea className='contact__textarea'></textarea>
+          <div className='contact__submit'>
+            <span>▶</span>
+            <span>■</span>
+          </div>
+        </div>
+      </div>
+      <div className='contact__right'>
+        <div className='contact__cross'>
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <line x1="0" y1="0" x2="100" y2="100" stroke="currentColor" strokeWidth="8" />
+            <line x1="100" y1="0" x2="0" y2="100" stroke="currentColor" strokeWidth="8" />
+          </svg>
+        </div>
+        <div className='contact__globe'>
+          <svg viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <ellipse cx="24" cy="24" rx="10" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <ellipse cx="24" cy="24" rx="20" ry="22" fill="none" stroke="currentColor" strokeWidth="1.5" />
+            <line x1="2" y1="24" x2="46" y2="24" stroke="currentColor" strokeWidth="1.5" />
+          </svg>
+        </div>
+      </div>
+    </div>
+  </div>
+          
+
       </section>
 
         <CaseStudyModal

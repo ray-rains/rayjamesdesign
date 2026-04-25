@@ -40,6 +40,15 @@ html {
   --border-radius-l: 16px;
 }
 
+.background__grid {
+  position: fixed;
+  inset: 0;
+  z-index: -5;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='48' height='48'%3E%3Cpath d='M 48 0 L 0 0 0 48' fill='none' stroke='rgba(0,0,0,0.15)' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 48px 48px;
+}
+
 main {
   display: flex;
   flex-direction: column;
@@ -76,7 +85,7 @@ main::after {
   background: radial-gradient(
     circle at center,
     transparent 20%,
-    rgba(0, 0, 0, 0.15) 100%
+    rgba(255, 255, 255, 0.15) 100%
   );
 }
 }
@@ -1347,7 +1356,7 @@ main::after {
   justify-content: center;
   position: relative;
   padding-top: 72px;
-  margin-bottom: 120px;
+  margin-bottom: 12px;
 }
 
 .manifesto__column {
@@ -1374,3 +1383,299 @@ main::after {
   padding-right: 6px;
 }
 
+.manifesto__panel {
+  width: 768px;
+  display: flex;
+  min-height: 518px;
+}
+
+.manifesto__panelLeft {
+  width: 130px;
+  display: flex;
+  position: relative;
+  background: var(--color-main);
+  flex-direction: column;
+  align-items: center;
+}
+
+.manifesto__marker {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width: 24px;
+  height: 24px;
+  background: var(--color-primary);
+}
+
+.manifesto__crosshair {
+  position: absolute;
+  top: 42px;
+  width: 80px;
+  height: 172px;
+  color: var(--color-primary);
+}
+
+.manifesto__crosshair svg {
+  width: 100%;
+  height: 100%;
+}
+
+.manifesto__dash {
+  width: 16px;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.manifesto__panelBottom {
+  position: absolute;
+  bottom: 16px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-right: 16px;
+  padding-left: 16px;
+}
+
+.manifesto__square {
+  width: 24px;
+  height: 24px;
+  border: 1px solid var(--color-primary);
+}
+
+.manifesto__panelRight {
+  flex: 1;
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: var(--color-main);
+  font-family: var(--font-mono);
+  border: 2px solid var(--color-main);
+}
+
+.manifesto__text {
+  margin-top: 36px;
+  font-size: 1rem;
+  text-align: right;
+  letter-spacing: 0em;
+  font-weight: 300;
+  line-height: 120%;
+}
+
+.manifesto__body {
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  line-height: 120%;
+  letter-spacing: 0.05em;
+  text-align: justify;
+  font-weight: 300;
+}
+
+.manifesto__center {
+    font-family: var(--font-mono);
+  font-size: 1rem;
+  text-align: center;
+  letter-spacing: 0.1em;
+  font-weight: 300;
+  line-height: 120%;
+  margin-bottom: 56px;
+}
+
+/* contact */
+
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  padding-top: 0;
+  margin-bottom: 120px;
+}
+
+.contact__column {
+  width: 768px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-main);
+  color: var(--color-primary);
+}
+
+.contact__header {
+  font-family: var(--font-mono);
+  font-weight: 350;
+  font-size: 3.125rem;
+  letter-spacing: 0.0em;
+  padding-left: 8px;
+  height: 64px;
+  align-items: center;
+}
+
+.contact__barcode {
+  width: 100%;
+  height: 64px;
+  overflow: hidden;
+  background: var(--color-primary);
+  border: 2px solid rgba(238,238,238, 1);
+}
+
+.contact__barcode img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.contact__body {
+  display: flex;
+  gap: 0;
+}
+
+.contact__left {
+  width: 48px;
+  height: 100%;
+  display: flex;
+  align-content: start;
+  border-right: 2px solid var(--color-primary);
+}
+
+.contact__formArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid rgba(238,238,238,1);
+}
+
+.contact__socials {
+  display: flex;
+  height: 64px;
+  gap: 24px;
+  padding-left: 16px;
+  align-items: center;
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.contact__links {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0em;
+  height: 38px;
+  width: 64px;
+  gap: 8px;
+  overflow: visible;
+  cursor: pointer;
+}
+
+.contact__linkSquare {
+  height: 16px;
+  width: 16px;
+  border: 1px solid var(--color-primary);
+  transition: background 0.2s ease;
+}
+
+.contact__links a {
+  color: var(--color-primary);
+  text-decoration: none;
+  opacity: 0.7;
+  display: block;
+  text-align: center;
+  width: 100%;
+  transition: opacity 0.2s ease;
+}
+
+.contact__links:hover .contact__linkSquare {
+  background: var(--color-primary);
+}
+
+.contact__links:hover a {
+  opacity: 1;
+}
+
+.contact__fields {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.contact__label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+}
+
+.contact__input {
+  background: var(--color-primary);
+  border: none;
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-xs) 0;
+  outline: none;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.contact__textarea {
+  background: var(--color-primary);
+  color: var(--color-primary);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: var(--spacing-s);
+  outline: none;
+  width: 100%;
+  height: 120px;
+  resize: none;
+}
+
+.contact__submit {
+  display: flex;
+  gap: var(--spacing-s);
+  justify-content: flex-end;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  opacity: 0.7;
+  cursor: pointer;
+  margin-top: var(--spacing-xs);
+}
+
+.contact__right {
+  width: 200px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.contact__cross {
+  height: 188px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  color: var(--color-primary);
+  border-bottom: 2px solid rgba(238,238,238,1);
+}
+
+.contact__cross svg {
+  width: 100%;
+  height: auto;
+}
+
+.contact__globe {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-l);
+  color: var(--color-main);
+  background: var(--color-primary);
+  border: 6px solid var(--color-main);
+}
+
+.contact__globe svg {
+  width: 80px;
+  height: 80px;
+}
