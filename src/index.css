@@ -1490,7 +1490,6 @@ main::after {
   justify-content: center;
   position: relative;
   padding-top: 0;
-  margin-bottom: 120px;
 }
 
 .contact__column {
@@ -1610,7 +1609,7 @@ main::after {
 .contact__input {
   background: var(--color-primary);
   border: none;
-  color: var(--color-primary);
+  color: var(--color-main);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   padding: var(--spacing-xs) 0;
@@ -1621,7 +1620,7 @@ main::after {
 
 .contact__textarea {
   background: var(--color-primary);
-  color: var(--color-primary);
+  color: var(--color-main);
   font-family: var(--font-mono);
   font-size: 0.75rem;
   padding: var(--spacing-s);
