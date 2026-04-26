@@ -5,13 +5,14 @@ import Chain from './Chain.jsx'
 import ChaosText from './ChaosText.jsx'
 import { useEffect, useRef, useState } from 'react'
 import CaseStudyModal from './CaseStudyModal.jsx'
+import IllustrationModal from './IllustrationModal.jsx'
 
 export default function HeroV2() {
     const [navState, setNavState] = useState(0)
     const [activeModal, setActiveModal] = useState(null)
     const aboutRowRef = useRef(null)
     const [submitState, setSubmitState] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
-
+    const [illustrationModalOpen, setIllustrationModalOpen] = useState(false)
     const handleSubmit = async () => {
       setSubmitState('sending')
       try {
@@ -397,13 +398,22 @@ export default function HeroV2() {
           <div className="creative__bentoBox1">
             <div className="bento1__top">
               <div className="bento1__topLeft">
-
+                <video autoPlay loop muted playsInline>
+                  <source width='217px' height='100%' src="/WiWiWiShroom.mp4" type="video/mp4"></source>
+                  Your browser does not support the video tag.
+                </video>
               </div>
               <div className="bento1__topRight">
                 <div className='bento1__header'>ANIMATION</div>
+                  <video autoPlay loop muted playsInline>
+                  <source width='551px' height='252px' src="/Wastelands.mp4" type="video/mp4"></source>
+                  Your browser does not support the video tag.
+                </video>
               </div>
             </div>
-            <div className="bento1__bottom"></div>
+            <div className="bento1__bottom">
+              <img src='/Manphibian.gif' alt='Official Mellow, Manphibian 5.14d Daniel Woods video' width='100%'/>
+            </div>
           </div>
           <div className='creative__code'>
             <div className='creative__codeLeft'>
@@ -504,14 +514,38 @@ export default function HeroV2() {
             </div>
             <div className='bento2__Right'>
               <div className='bento2__RightTop'>
-                <div className='bento2__Arrow'></div>
+                <div className='bento2__Arrow'>
+                  <img src='/arrow.svg' alt='open arrow'/>
+                </div>
               </div>
               <div className='bento2__RightBottom'>
-                <div className='bento2__ViewMore'>
-                  
+                <div className='bento2__ViewMore' onClick={() => setIllustrationModalOpen(true)}>
+                  <p className='bento2__ViewMoreText'>VIEW MORE</p>
                 </div>
                 <div className='bento2__Works'>
-
+                  <div className='works__textRight'>
+                    <p><u>SDCC 2024</u><br/>
+                      Panelist</p>
+                  </div>
+                  <div className='works__textLeft'>
+                    <p><u>Wastelands</u><br/>
+                    Writer<br/>
+                    Illustrator</p>
+                  </div>
+                  <div className='works__textRight'>
+                    <p><u>Darkness<br/>
+                      Anthology</u><br/>
+                      Contributor</p>
+                  </div>
+                  <div className='works__textLeft'>
+                    <p><u>Junior<br/>
+                    Reporter</u><br/>
+                    Storyboard<br/>
+                    Artist</p>
+                  </div>
+                  <div style={{position: 'absolute', left: '8px', bottom: '8px'}}>
+                    <p>...</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -697,6 +731,11 @@ export default function HeroV2() {
         >
           <p>Your case study content here</p>
         </CaseStudyModal>
+
+        <IllustrationModal
+          isOpen={illustrationModalOpen}
+          onClose={() => setIllustrationModalOpen(false)}
+        />
     </>
   )
 }
