@@ -92,6 +92,39 @@ main::after {
 
 /* modal */
 
+.modal__caseMeta {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 48px;
+}
+
+.modal__caseMetaCard {
+  flex: 1;
+  border: 1px solid var(--color-main);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.modal__caseMetaLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--color-highlight);
+  margin-bottom: 4px;
+}
+
+.modal__caseMetaItem {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--color-main);
+  opacity: 0.8;
+}
+
 .works__readMore {
   cursor: pointer;
 }
@@ -212,8 +245,8 @@ main::after {
   font-size: 1rem;
   font-weight: 350;
   letter-spacing: 0.1em;
-  color: var(--color-main);
-  background: none;
+  color: var(--color-primary);
+  background: var(--color-main);
   border: none;
   cursor: pointer;
   opacity: 0;
@@ -1983,4 +2016,137 @@ display: flex;
 .contact__globe svg {
   width: 80px;
   height: 80px;
+}
+.modal__caseStudy {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding-top: 16px;
+}
+
+.modal__caseSection {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal__caseLead {
+  font-family: var(--font-mono);
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 130%;
+  letter-spacing: 0.05em;
+  color: var(--color-main);
+}
+
+.modal__caseLabel {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  color: var(--color-highlight);
+}
+
+.modal__caseBody {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 160%;
+  letter-spacing: 0.02em;
+  color: var(--color-main);
+  text-align: justify;
+}
+
+.modal__caseSection--metrics {
+  display: flex;
+  flex-direction: row;
+  gap: 64px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-main);
+}
+
+.modal__caseMetric {
+  font-family: var(--font-mono);
+  font-size: 3rem;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  color: var(--color-main);
+  line-height: 110%;
+}
+
+.modal__caseMetric span {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+.modal__caseBeforeAfter {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.modal__caseImgRow {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.modal__caseImgRow--single {
+  display: flex;
+  justify-content: center;
+}
+
+.modal__caseImgRow--single .modal__caseImgFrame {
+  width: 100%;
+}
+
+.modal__caseImgFrame {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modal__caseImgFrame--wide {
+  flex: 1;
+}
+
+.modal__caseImgLabel {
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+  color: var(--color-main);
+  opacity: 0.5;
+}
+
+.modal__caseImgInner {
+  border: 1px solid var(--color-main);
+  padding: 2px;
+  width: 100%;
+}
+
+.modal__caseImgInner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.modal__caseImgInner--tall img {
+  object-fit: contain;
+}
+
+.modal__caseBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }

@@ -224,20 +224,21 @@ export default function HeroV2() {
             <div className="about__content">
               <h6 className="about__headline">I am a Product Designer from Toledo, Ohio</h6>
               <p className="about__body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
+                I craft systems that carry a strong sense of narrative and cohesion.</p>
+              <p className="about__body">
+                I spent 4 years at <b>Sony</b> elevating the user experience of the 
+                DTC platform and have worked with other brands to integrate storytelling
+                into their design.
               </p>
               <p className="about__body">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-                fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                culpa qui officia deserunt mollit anim id est laborum.
+                I have been educated by the passions that I have gathered throughout my life.
+                When I am not with my family, I am as deep into the alpine and as high
+                on a wall as my hands and feet will allow. Any time left over is either spent
+                studying anatomy and animation, or UX and front-end development. I live for the pursuit
+                of craft, and the self-understanding that the process of improvement brings.
+              </p>
+              <p className="about__body">
+                I am open to both <b>full-time</b> and <b>contract</b> roles.
               </p>
             </div>
             <div className="about__imageFrame">
@@ -706,8 +707,172 @@ export default function HeroV2() {
           heroImage="/SonyBanner.webp"
           isOpen={activeModal === 'sony'}
           onClose={() => setActiveModal(null)}
-        >
-          <p>Your case study content here</p>
+
+><div className='modal__caseStudy'>
+
+  <div className='modal__caseMeta'>
+    <div className='modal__caseMetaCard'>
+      <p className='modal__caseMetaLabel'>ROLE</p>
+      <p className='modal__caseMetaItem'>Web Designer</p>
+      <p className='modal__caseMetaItem'>Systems Design</p>
+      <p className='modal__caseMetaItem'>UX Research</p>
+      <p className='modal__caseMetaItem'>Iconography</p>
+    </div>
+    <div className='modal__caseMetaCard'>
+      <p className='modal__caseMetaLabel'>TOOLS</p>
+      <p className='modal__caseMetaItem'>Figma</p>
+      <p className='modal__caseMetaItem'>Google Analytics</p>
+      <p className='modal__caseMetaItem'>Adobe Creative Suite</p>
+      <p className='modal__caseMetaItem'>Jira</p>
+    </div>
+    <div className='modal__caseMetaCard'>
+      <p className='modal__caseMetaLabel'>DETAILS</p>
+      <p className='modal__caseMetaItem'>Duration: 4 years '22-'26</p>
+      <p className='modal__caseMetaItem'>Company: Sony Electronics</p>
+    </div>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLead'>Building the design conditions for a platform to find its own voice.</p>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>CONTEXT</p>
+    <p className='modal__caseBody'>
+      Created and launched in 2021, electronics.sony.com was conceived as Sony Electronics' first flagship attempt at owning the digital commercial interactions with their own community. All years of operation prior, that relationship had lived solely in third-party hands: retailers who were trusted to treat the brand with taste, but ultimately could not afford to apply the same love and care that an in-house team could provide. The DTC platform was the answer to that. A place where Sony could find its own voice and build direct relationships with customers.
+    </p>
+    <p className='modal__caseBody'>
+      At my time of joining, the site had not yet come into its own.
+    </p>
+    <p className='modal__caseBody'>
+      Running as a lean startup style venture within Sony, the site was launched with bare functionality in mind with the expectation for live and rapid iteration. Starting with a stack of full-width banners, a top navigation bar, a series of image-led promotional blocks, and search-based product listing pages, there was nothing tying the user journey together as a cohesive shopping experience. My arrival allowed the now-6-person team (2 Designers // 1 PM // 3 Devs) more breathing room to take on the task of establishing a foundation built on true User Experience principles.
+    </p>
+    <p className='modal__caseBody'>
+      The breathing room led directly to more (tentative) trust being placed in the Design Team as a task force and allowed for a stronger sense of creative direction and cohesiveness across Sony's entire online presence. We now had the internal credibility to lend our skills to other branches of the e-commerce ecosystem.
+    </p>
+  </div>
+
+  <div className='modal__caseBeforeAfter'>
+    <div className='modal__caseImgFrame'>
+      <p className='modal__caseImgLabel'>BEFORE</p>
+      <div className='modal__caseImgInner'>
+        <img src='/SonyBefore.webp' alt='Sony DTC homepage before redesign' />
+      </div>
+    </div>
+    <div className='modal__caseImgFrame'>
+      <p className='modal__caseImgLabel'>AFTER</p>
+      <div className='modal__caseImgInner'>
+        <img src='/SonyAfter.webp' alt='Sony DTC homepage after redesign' />
+      </div>
+    </div>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>THE SHIFT</p>
+    <p className='modal__caseBody'>
+      The first meaningful change came shortly after my onboarding: basic wayfinding through category tiles on the homepage, leading users into structured PLPs. Small in scope, significant in what it represented; Design was being given a seat at the table in brand strategy.
+    </p>
+    <p className='modal__caseBody'>
+      What followed was four years of a specific kind of work. Not just designing a platform, but defending the conditions under which good design could happen. Every major decision followed the same pattern: a strategic goal to achieve, the design team would ask the right questions — what data supports this, what are we optimizing for, what does this do to the metrics we've already moved — until a clear path forward was created that took all impacted parties into consideration.
+    </p>
+    <p className='modal__caseBody'>
+      That negotiation never stopped, but it sharpened everything. Every design decision I made had to be defensible both aesthetically and strategically.
+    </p>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>INSIGHTS</p>
+    <p className='modal__caseBody'>
+      One of the more clarifying data points came from device traffic analysis. An overwhelming majority of page visits came from mobile, while an overwhelming majority of purchases were made on desktop.
+    </p>
+    <p className='modal__caseBody'>
+      The implication was that our users tended to take a longer amount of time to consider and really chew on the purchasing decisions. Higher engagement and lower bounce on the Desktop viewport for PDPs seemed to suggest that users would browse on their phones throughout the day and use the PC in their downtime to dig deeper into product details. All of these data dots lined up over time and helped us really understand our users, bridge that gap, and build a deeper connection.
+    </p>
+    <p className='modal__caseBody'>
+      On mobile, the priority became engagement and momentum: The funnel from homepage to category to product, designed to keep users moving and interested, the way a well-designed retail environment like Apple guides you through a space without you realizing you're being guided. On desktop, the priority became information density and clarity: How a product page communicated everything a considered purchaser needed to feel confident before pulling the trigger on a significant purchase.
+    </p>
+    <p className='modal__caseBody'>
+      It became clear that rather than defining ourselves as a "mobile-first" or "desktop-first" platform, we needed to take a holistic approach and consider the entire e-commerce sales funnel.
+    </p>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>WHAT I BUILT</p>
+
+    <div className='modal__caseBlock'>
+      <p className='modal__caseBody'>
+        The most visible piece of work was the funnel — but the funnel was really an argument about how people find things they didn't know they were looking for.
+      </p>
+      <p className='modal__caseBody'>
+        Before it existed, the site dropped users at the top of a cliff and pointed at the nav bar. A navigation system managed by an external contractor team, slow to change and built for breadth rather than guidance. If you knew exactly what you wanted, you could find it. If you didn't, you were on your own.
+      </p>
+      <p className='modal__caseBody'>
+        The answer was to build the guidance into the page itself. Under the hero on the homepage — before any product — a single row of product categories with corresponding imagery. Not a product grid. Not a promotional banner. A map. Each tile leads to a category page that follows the same logic: subcategories first, products second. The same fractal pattern repeating at every level of the hierarchy, so the user always knows where they are and where they can go. Homepage to category to subcategory PLP — a hand-holding experience embedded in the content itself, the way a well-designed retail space moves you through a store before you've made a decision.
+      </p>
+      <p className='modal__caseBody'>
+        The fight on this front wasn't about structure. It was about restraint. The recurring pressure from one particular stakeholder was toward density — full-width banners photoshopped together, product on top of product, the visual language of a Macy's circular or a World Market spread. The counterargument was always the same: white space isn't emptiness, it's what lets a product make an impact. Sony's brand already knew how to be minimal. The job was to protect that instinct from the inside.
+      </p>
+    </div>
+
+    <div className='modal__caseImgRow'>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>HOMEPAGE CATEGORY GRID</p>
+        <div className='modal__caseImgInner'>
+          <img src='/SonyCategoryGrid.webp' alt='Sony homepage category tile grid' />
+        </div>
+      </div>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>CATEGORY PAGE FUNNEL</p>
+        <div className='modal__caseImgInner'>
+          <img src='/SonyCategoryPage.webp' alt='Sony category page subcategory funnel' />
+        </div>
+      </div>
+    </div>
+
+    <div className='modal__caseBlock'>
+      <p className='modal__caseBody'>
+        At the most minute level of hierarchy and visual landmarks, we built a design system for an icon library that gave users a quick, scannable summary of the features included in the PDP. Restricted to a handful of priority selling points, these icons gave us a way around the user pain point of any comprehensive features page: a wall of words. With flagship product pages coming in at upwards of 3,000 words, an 8-feature grid of icons was a simple but effective fix to one of the largest pain points without breaking Sony's global platform content convention.
+      </p>
+    </div>
+
+    <div className='modal__caseImgRow modal__caseImgRow--single'>
+      <div className='modal__caseImgFrame'>
+        <p className='modal__caseImgLabel'>ICON SYSTEM</p>
+        <div className='modal__caseImgInner'>
+          <img src='/SonyIcons.webp' alt='Sony product feature icon system' />
+        </div>
+      </div>
+    </div>
+
+    <div className='modal__caseBlock'>
+      <p className='modal__caseBody'>
+        The design system underneath all of it was built to absorb pressure. New product lines every quarter, new campaigns, we needed a simple and flexible component library that could accommodate a wide variety of interactions and media without any one category feeling too siloed. After nearly a quarter of stakeholder reviews, revisions, and strategy meetings, we moved forward with an elegant answer that incorporates vivid imagery, striking headline typography, and — most importantly — considerable spacing and visual breathing room. The physical design of Sony products tends to do the speaking for the brand, so we just needed to give them room to do their thing.
+      </p>
+    </div>
+
+    <div className='modal__caseImgRow'>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>MOBILE — ENGAGEMENT FUNNEL</p>
+        <div className='modal__caseImgInner modal__caseImgInner--tall'>
+          <img src='/SonyMobile.webp' alt='Sony mobile experience' />
+        </div>
+      </div>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>DESKTOP — PDP</p>
+        <div className='modal__caseImgInner modal__caseImgInner--tall'>
+          <img src='/SonyDesktop.webp' alt='Sony desktop product detail page' />
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div className='modal__caseSection modal__caseSection--metrics'>
+    <p className='modal__caseMetric'>+158.1% <span>engagement</span></p>
+    <p className='modal__caseMetric'>+44.4% <span>conversions</span></p>
+  </div>
+
+</div>
         </CaseStudyModal>
 
         <CaseStudyModal
