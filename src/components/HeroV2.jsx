@@ -13,16 +13,35 @@ export default function HeroV2() {
     const aboutRowRef = useRef(null)
     const [submitState, setSubmitState] = useState('idle') // 'idle' | 'sending' | 'success' | 'error'
     const [illustrationModalOpen, setIllustrationModalOpen] = useState(false)
-    const handleSubmit = async () => {
-      setSubmitState('sending')
-      try {
-        // your form submission logic here
-        await new Promise(resolve => setTimeout(resolve, 1500)) // placeholder
-        setSubmitState('success')
-      } catch {
-        setSubmitState('error')
+const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitState('sending');
+
+    const formData = new FormData(e.target);
+
+    try {
+      const response = await fetch('https://formspree.io/f/mdabndwd', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          Accept: 'application/json',
+        },
+      });
+
+      if (response.ok) {
+        setSubmitState('success');
+        e.target.reset();
+
+        // optional: reset back to idle after a delay
+        setTimeout(() => setSubmitState('idle'), 3000);
+      } else {
+        setSubmitState('error');
       }
+    } catch (err) {
+      setSubmitState('error');
     }
+  };
+
 
     useEffect(() => {
       const observer = new IntersectionObserver(
@@ -614,66 +633,89 @@ export default function HeroV2() {
       </div>
       <div className='contact__formArea'>
         <div className='contact__socials'>
-          <div className='contact__links'>
+          <a href='https://www.linkedin.com/in/rayjamesdesign/' className='contact__links'>
             <div className='contact__linkSquare' />
-            <a href='#'>LINKEDIN</a>
-          </div>
-          <div className='contact__links'>
+            LINKEDIN
+          </a>
+          <a href='https://x.com/bundokbreezy' className='contact__links'>
             <div className='contact__linkSquare' />
-            <a href='#'>TWITTER</a>
-          </div>
-          <div className='contact__links'>
+            TWITTER
+          </a>
+          <a href='https://www.instagram.com/bundok_breezy/' className='contact__links'>
             <div className='contact__linkSquare' />
-            <a href='#'>INSTAGRAM</a>
-          </div>
-          <div className='contact__links'>
+            INSTAGRAM
+          </a>
+          <a href='https://www.youtube.com/@Bundok_Breezy' className='contact__links'>
             <div className='contact__linkSquare' />
-            <a href='#'>YOUTUBE</a>
-          </div>
+            YOUTUBE
+          </a>
         </div>
         <div className='contact__socials'>
           <div className='contact__links'>
             <div className='contact__linkSquare' />
             <a href='#'>RESUME</a>
           </div>
-          <div className='contact__links'>
+          <a href='mailto:raymond.rainsberger@gmail.com' className='contact__links'>
             <div className='contact__linkSquare' />
-            <a href='#'>EMAIL</a>
+            EMAIL
+          </a>
+        </div>
+          <form className='contact__fields' onSubmit={handleSubmit}>
+                <label className='contact__label'>EMAIL</label>
+      <input
+        className='contact__input'
+        type='email'
+        name='email'
+        placeholder='sender identification'
+        required
+      />
+
+      <div className='contact__bottom'>
+        <div className='contact__message'>
+          <label className='contact__label'>MESSAGE</label>
+          <textarea
+            className='contact__textarea'
+            name='message'
+            placeholder='inquire within'
+            required
+          />
+        </div>
+
+        <div className='contact__submit'>
+          <button
+            type="submit"
+            disabled={submitState === 'sending'}
+            className={`contact__send ${
+              submitState === 'sending' ? 'contact__send--sending' : ''
+            }`}
+          >
+            <svg viewBox="0 0 24 24">
+              <polygon points="2,2 22,12 2,22" fill="currentColor" />
+            </svg>
+          </button>
+
+          <div className={`contact__status contact__status--${submitState}`}>
+            {submitState === 'success' && (
+              <svg viewBox="0 0 24 24">
+                <polyline
+                  points="4,12 10,18 20,6"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                />
+              </svg>
+            )}
+
+            {submitState === 'error' && (
+              <svg viewBox="0 0 24 24">
+                <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" strokeWidth="2.5" />
+                <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" strokeWidth="2.5" />
+              </svg>
+            )}
           </div>
         </div>
-        <div className='contact__fields'>
-          <label className='contact__label'>EMAIL</label>
-          <input className='contact__input' type='email' />
-          <div className='contact__bottom'>
-            <div className='contact__message'>
-              <label className='contact__label'>MESSAGE</label>
-              <textarea className='contact__textarea'></textarea>
-            </div>
-            <div className='contact__submit'>
-              <div 
-                className={`contact__send ${submitState === 'sending' ? 'contact__send--sending' : ''}`}
-                onClick={handleSubmit}
-              >
-                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <polygon points="2,2 22,12 2,22" fill="currentColor" />
-                </svg>
-              </div>
-              <div className={`contact__status contact__status--${submitState}`}>
-                {submitState === 'success' && (
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <polyline points="4,12 10,18 20,6" fill="none" stroke="currentColor" strokeWidth="2.5" />
-                  </svg>
-                )}
-                {submitState === 'error' && (
-                  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" strokeWidth="2.5" />
-                    <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" strokeWidth="2.5" />
-                  </svg>
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
+      </div>
+        </form>
       </div>
       <div className='contact__right'>
         <div className='contact__cross'>
