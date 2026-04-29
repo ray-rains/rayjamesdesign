@@ -883,7 +883,124 @@ export default function HeroV2() {
           isOpen={activeModal === 'leimert'}
           onClose={() => setActiveModal(null)}
         >
-          <p>Your case study content here</p>
+        <div className='modal__caseStudy'>
+
+  <div className='modal__caseMeta'>
+    <div className='modal__caseMetaCard'>
+      <p className='modal__caseMetaLabel'>ROLE</p>
+      <p className='modal__caseMetaItem'>Marketing Partner</p>
+      <p className='modal__caseMetaItem'>Animation</p>
+      <p className='modal__caseMetaItem'>Illustration</p>
+      <p className='modal__caseMetaItem'>Visual Development</p>
+    </div>
+    <div className='modal__caseMetaCard'>
+      <p className='modal__caseMetaLabel'>TOOLS</p>
+      <p className='modal__caseMetaItem'>Adobe After Effects</p>
+      <p className='modal__caseMetaItem'>Adobe Illustrator</p>
+      <p className='modal__caseMetaItem'>Procreate</p>
+    </div>
+    <div className='modal__caseMetaCard'>
+      <p className='modal__caseMetaLabel'>DETAILS</p>
+      <p className='modal__caseMetaItem'>Client: Leimert Mountaineering</p>
+      <p className='modal__caseMetaItem'>Campaign: REI Embark Program</p>
+    </div>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLead'>Street culture and climbing have always belonged together. It just took the right people to say so out loud.</p>
+  </div>
+
+  <div className='modal__caseImgRow modal__caseImgRow--single'>
+    <div className='modal__caseImgFrame'>
+      <p className='modal__caseImgLabel'>LEIMERT MOUNTAINEERING × REI</p>
+      <div className='modal__caseImgInner'>
+        <img src='/LeimertBanner.webp' alt='Leimert Mountaineering campaign image' />
+      </div>
+    </div>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>CONTEXT</p>
+    <p className='modal__caseBody'>
+      Ron Meade built Leimert Mountaineering around something simple and true: the mountains were always for us too. The brand carries the full weight of that statement — the aesthetic of Leimert Park, the grit of urban climbing culture, the knowledge that access isn't something everyone is handed and that the people who had to fight for it bring something different to the wall.
+    </p>
+    <p className='modal__caseBody'>
+      Ron found me through my animation work on Mellow's Manphibian video — a piece built around Daniel Woods' ascent of one of the hardest trad routes in the country, set to punk rock, designed to carry the same irreverent high-voltage energy that Daniel himself brings to climbing. Ron recognized something in that work. We got on a call and talked for a while — two kids from different cities, Toledo and Leimert Park, who had both had to claw their way into a sport that didn't exactly roll out the welcome mat.
+    </p>
+    <p className='modal__caseBody'>
+      For me that meant leaving everything behind in Toledo, loading whatever fit into a Chevy Impala, and living the old school dirtbag life — truck stops, Walmart parking lots, REI parking lots — because Van Life money wasn't something I had. For Ron it meant building a brand from the ground up that reflected the culture he actually came from rather than the one climbing magazines had decided climbing was supposed to have.
+    </p>
+    <p className='modal__caseBody'>
+      That shared understanding was the foundation of everything we made together.
+    </p>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>THE BRIEF</p>
+    <p className='modal__caseBody'>
+      REI came to Leimert through a program designed to surface independent brands rather than defaulting exclusively to the established names. The ask was campaign creative — content that could carry the brand's identity into a wider audience without sanding down what made it worth noticing in the first place.
+    </p>
+    <p className='modal__caseBody'>
+      The challenge wasn't concept. The concept was already there and it was good. The challenge was execution: how do you translate a brand built on lived experience into visual assets that feel native to both the streets and the mountains, work as social advertising, and still put the product front and center?
+    </p>
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>THE WORK</p>
+
+    <div className='modal__caseBlock'>
+      <p className='modal__caseBody'>
+        The answer was to treat the creative like the culture — layered, kinetic, and unafraid of its own references.
+      </p>
+      <p className='modal__caseBody'>
+        I built overlay animations on top of lifestyle footage for social media ads, and developed illustrations layered over product imagery that enhanced the cultural narrative without burying what was being sold. The visual language draws from the same well as the brand itself: graffiti letterforms, the tactile rawness of street art, the physical directness of climbing culture. Not as decoration. As context.
+      </p>
+    </div>
+
+    <div className='modal__caseImgRow'>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>SOCIAL AD — ANIMATION OVERLAY</p>
+        <div className='modal__caseImgInner'>
+          <img src='/LeimertAd1.webp' alt='Leimert social ad animation overlay' />
+        </div>
+      </div>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>LIFESTYLE ILLUSTRATION</p>
+        <div className='modal__caseImgInner'>
+          <img src='/LeimertAd2.webp' alt='Leimert lifestyle illustration overlay' />
+        </div>
+      </div>
+    </div>
+
+    <div className='modal__caseBlock'>
+      <p className='modal__caseBody'>
+        The illustration in the banner image is a direct expression of that approach — the Leimert Mountaineering wordmark rendered in bubble graffiti lettering, climbing mountains drawn in the same hand, a climber centered in front of it all holding a rack of gear like it belongs there. Because it does.
+      </p>
+      <p className='modal__caseBody'>
+        The goal was never to make climbing look like street culture or street culture look like climbing. The goal was to show that for some of us, they were never separate to begin with.
+      </p>
+    </div>
+
+    <div className='modal__caseImgRow modal__caseImgRow--single'>
+      <div className='modal__caseImgFrame'>
+        <p className='modal__caseImgLabel'>CAMPAIGN ANIMATION</p>
+        <div className='modal__caseImgInner'>
+          <video autoPlay loop muted playsInline>
+            <source src='/LeimertAccent.mp4' type='video/mp4' />
+          </video>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>THE LINE</p>
+    <p className='modal__caseLead'>From sleeping in REI parking lots to hanging work on their walls.</p>
+    <p className='modal__caseBody'>That's not a tagline. That's just what happened.</p>
+  </div>
+
+</div>
         </CaseStudyModal>
 
         <CaseStudyModal
