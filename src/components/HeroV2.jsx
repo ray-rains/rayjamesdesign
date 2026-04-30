@@ -746,7 +746,7 @@ const handleSubmit = async (e) => {
           title="SONY ELECTRONICS"
           role="WEB DESIGNER"
           skills={['SYSTEMS DESIGN', 'UX RESEARCH & DESIGN', 'BRANDING & ICONOGRAPHY']}
-          heroImage="/SonyBanner.webp"
+          heroImage="/SonyCaseStudyBanner.mp4"
           isOpen={activeModal === 'sony'}
           onClose={() => setActiveModal(null)}
 
