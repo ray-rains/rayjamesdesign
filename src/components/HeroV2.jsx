@@ -990,18 +990,6 @@ const handleSubmit = async (e) => {
     </p>
   </div>
 
-  <div className='modal__caseSection'>
-    <p className='modal__caseLabel'>THE WORK</p>
-
-    <div className='modal__caseBlock'>
-      <p className='modal__caseBody'>
-        The answer was to work as genuinely as possible. Culture comes from a place of authenticity from the individuals that make it up. We showed up with a loud expressiveness that communicates confidence in who we are, and an intent to execute.
-      </p>
-      <p className='modal__caseBody'>
-        I built overlay animations on top of lifestyle footage for social media ads, and developed illustrations layered over product imagery that enhanced the cultural narrative without burying the product. The visual language draws from the same well as the brand itself: graffiti letterforms, tactile rawness of street art, the physical directness of climbing culture. Not as decoration, but as context.
-      </p>
-    </div>
-
     <div className='modal__caseImgRow'>
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
         <p className='modal__caseImgLabel'>GEAR UP, GET OUT</p>
@@ -1021,6 +1009,18 @@ const handleSubmit = async (e) => {
       </div>
     </div>
 
+  <div className='modal__caseSection'>
+    <p className='modal__caseLabel'>THE WORK</p>
+
+    <div className='modal__caseBlock'>
+      <p className='modal__caseBody'>
+        The answer was to work as genuinely as possible. Culture comes from a place of authenticity from the individuals that make it up. We showed up with a loud expressiveness that communicates confidence in who we are, and an intent to execute.
+      </p>
+      <p className='modal__caseBody'>
+        I built overlay animations on top of lifestyle footage for social media ads, and developed illustrations layered over product imagery that enhanced the cultural narrative without burying the product. The visual language draws from the same well as the brand itself: graffiti letterforms, tactile rawness of street art, the physical directness of climbing culture. Not as decoration, but as context.
+      </p>
+    </div>
+
     <div className='modal__caseBlock'>
       <p className='modal__caseBody'>
         The illustration in the banner image is a direct expression of that approach. The Leimert Mountaineering wordmark rendered in bubble graffiti lettering, climbing mountains drawn in the same hand, a climber centered in front of it all holding a rack of gear like it belongs there because he does.
@@ -1034,7 +1034,7 @@ const handleSubmit = async (e) => {
     </div>
 
     <div className='modal__caseImgRow'>
-      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+      <div style={{flex: '0.27'}} className='modal__caseImgFrame modal__caseImgFrame--wide'>
         <p className='modal__caseImgLabel'>LIVE</p>
           <div className='modal__caseImgInner'>
             <img src='/InStore.webp'/>
