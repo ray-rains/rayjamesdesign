@@ -899,13 +899,13 @@ const handleSubmit = async (e) => {
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
         <p className='modal__caseImgLabel'>MOBILE — ENGAGEMENT FUNNEL</p>
         <div className='modal__caseImgInner modal__caseImgInner--tall'>
-          <img src='/SonyMobile.webp' alt='Sony mobile experience' />
+          <img src='/MobileLayout.png' alt='Sony mobile experience' />
         </div>
       </div>
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
         <p className='modal__caseImgLabel'>DESKTOP — PDP</p>
         <div className='modal__caseImgInner modal__caseImgInner--tall'>
-          <img src='/SonyDesktop.webp' alt='Sony desktop product detail page' />
+          <img src='/DesktopPDP.png' alt='Sony desktop product detail page' />
         </div>
       </div>
     </div>
