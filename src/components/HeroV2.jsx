@@ -804,7 +804,10 @@ const handleSubmit = async (e) => {
     <div className='modal__caseImgFrame'>
       <p className='modal__caseImgLabel'>AFTER</p>
       <div className='modal__caseImgInner'>
-        <img src='/SonyAfter.webp' alt='Sony DTC homepage after redesign' />
+        <video width="640" height="360" controls>
+          <source src="/SonyAfter.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+        </video>
       </div>
     </div>
   </div>
