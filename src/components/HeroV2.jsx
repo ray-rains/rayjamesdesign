@@ -863,13 +863,13 @@ const handleSubmit = async (e) => {
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
         <p className='modal__caseImgLabel'>HOMEPAGE CATEGORY GRID</p>
         <div className='modal__caseImgInner'>
-          <img src='/SonyCategoryGrid.webp' alt='Sony homepage category tile grid' />
+          <img src='/OldCategoryGrid.png' alt='Sony homepage category tile grid' />
         </div>
       </div>
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
         <p className='modal__caseImgLabel'>CATEGORY PAGE FUNNEL</p>
         <div className='modal__caseImgInner'>
-          <img src='/SonyCategoryPage.webp' alt='Sony category page subcategory funnel' />
+          <img src='/SalesFunnel.png' alt='Sony category page subcategory funnel' />
         </div>
       </div>
     </div>
