@@ -1004,15 +1004,19 @@ const handleSubmit = async (e) => {
 
     <div className='modal__caseImgRow'>
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
-        <p className='modal__caseImgLabel'>SOCIAL AD — ANIMATION OVERLAY</p>
-        <div className='modal__caseImgInner'>
-          <img src='/LeimertAd1.webp' alt='Leimert social ad animation overlay' />
-        </div>
+        <p className='modal__caseImgLabel'>GEAR UP, GET OUT</p>
+          <div className='modal__caseImgInner'>
+          <video width='304px' controls>
+            <source src='/KDotEdit.mp4' type='video/mp4' />
+          </video>
+          </div>
       </div>
       <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
-        <p className='modal__caseImgLabel'>LIFESTYLE ILLUSTRATION</p>
+        <p className='modal__caseImgLabel'>SEND SOMETHING</p>
         <div className='modal__caseImgInner'>
-          <img src='/LeimertAd2.webp' alt='Leimert lifestyle illustration overlay' />
+          <video width='304px' controls>
+            <source src='/SendSomething.mp4' type='video/mp4' />
+          </video>
         </div>
       </div>
     </div>
@@ -1027,6 +1031,21 @@ const handleSubmit = async (e) => {
       <p className='modal__caseBody'>
         The goal was never to make climbing look like street culture or street culture look like climbing. The goal was to show that for some of us, they were never separate to begin with.
       </p>
+    </div>
+
+    <div className='modal__caseImgRow'>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>LIVE</p>
+          <div className='modal__caseImgInner'>
+            <img src='/InStore.webp'/>
+          </div>
+      </div>
+      <div className='modal__caseImgFrame modal__caseImgFrame--wide'>
+        <p className='modal__caseImgLabel'>MIND ON THE PRIZE</p>
+        <div className='modal__caseImgInner'>
+            <img src='/CerroTorres.webp'/>
+        </div>
+      </div>
     </div>
 
     <div className='modal__caseImgRow modal__caseImgRow--single'>
