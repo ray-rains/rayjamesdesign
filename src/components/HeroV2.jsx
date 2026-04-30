@@ -884,7 +884,7 @@ const handleSubmit = async (e) => {
       <div className='modal__caseImgFrame'>
         <p className='modal__caseImgLabel'>ICON SYSTEM</p>
         <div className='modal__caseImgInner'>
-          <img src='/SonyIcons.webp' alt='Sony product feature icon system' />
+          <img src='/IconGrid.png' alt='Sony product feature icon system' />
         </div>
       </div>
     </div>
