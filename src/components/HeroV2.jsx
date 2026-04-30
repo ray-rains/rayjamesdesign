@@ -805,7 +805,7 @@ const handleSubmit = async (e) => {
       <p className='modal__caseImgLabel'>AFTER</p>
       <div className='modal__caseImgInner'>
         <video width="640" height="360" controls>
-          <source src="/SonyAfter.mp4" type="video/mp4">
+          <source src="/SonyAfter.mp4" type="video/mp4"/>
               Your browser does not support the video tag.
         </video>
       </div>
