@@ -1564,6 +1564,29 @@ display: flex;
   cursor: pointer;
 }
 
+.illus__reads {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 12px;
+  margin-bottom: 32px;
+}
+
+.illus__readLink {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  color: var(--color-main);
+  text-decoration: none;
+  opacity: 0.6;
+  width: fit-content;
+}
+
+.illus__readLink:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
 .illus__lightboxClose {
   position: absolute;
   top: 24px;

@@ -1,8 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
 const illustrations = [
-  { src: '/Illustrations/Wastelands.pdf', alt: 'Wastelands Issue 1' },
-  { src: '/Illustrations/Manifestation.pdf', alt: 'Contribution to Apollo City Comics Shadow Anthology' },
   { src: '/Illustrations/page0016-17.jpg', alt: 'Yes, a Jojo reference' },
   { src: '/Illustrations/GunborgSkirmisherFull.jpg', alt: 'Inaugural card art for FullAuto TCG' },
   { src: '/Illustrations/WastelandLullaby.jpg', alt: 'Stars on the midnight ranges' },
@@ -119,6 +117,14 @@ export default function IllustrationModal({ isOpen, onClose }) {
         <div className="modal__content" ref={contentRef}>
           <h2 className="modal__title">ILLUSTRATION</h2>
           <p className="modal__role">&gt;&gt;lesser known comics / freelance&lt;&lt;</p>
+          <div className="illus__reads">
+            <a href="/Illustrations/Wastelands.pdf" target="_blank" rel="noreferrer" className="illus__readLink">
+              Wastelands Issue No. 1
+            </a>
+            <a href="/Illustrations/Manifestation.pdf" target="_blank" rel="noreferrer" className="illus__readLink">
+              Manifestation — Apollo City Comics Shadow Anthology
+            </a>
+          </div>
           <div className="illus__grid">
             {illustrations.map((ill, i) => (
               <div
