@@ -1,12 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 
 const illustrations = [
-  { src: '/Oni.jpg', alt: 'Oni Warlock' },
-  { src: '/LucidHol.jpg', alt: 'Panel from LUCID tie-in comic' },
-  { src: '/Skirmisher.jpg', alt: 'Card art for Full Auto TCG' },
-  { src: '/WitchBolt.jpg', alt: 'WitchBolt character art' },
-  { src: '/WastelandsIssue2.jpg', alt: 'Preview of Wastelands Issue no.2' },
-  { src: '/GunBorgSkirmisher.jpg', alt: 'Card art for Full Auto TCG' },
+  { src: '/Wastelands.pdf', alt: 'Wastelands Issue 1' },
+  { src: '/Manifestation.pdf', alt: 'Contribution to Apollo City Comics Shadow Anthology' },
+  { src: '/page0016-17.jpg', alt: 'Yes, a Jojo reference' },
+  { src: '/GunborgSkirmisherFull.jpg', alt: 'Inaugural card art for FullAuto TCG' },
+  { src: '/WastelandLullaby.jpg', alt: 'Stars on the midnight ranges' },
+  { src: '/GoblinParty.jpg', alt: 'When you are tight with the neighbors downstairs' },
+  { src: '/OniFull.jpg', alt: 'Magitek worldbuilding exercise' },
+  { src: '/WitchBoltColors.jpg', alt: 'Future collaborations with DS artist Witch Bolt' },
+  { src: '/Wastelands2', alt: 'This will eventually come out...' },
+  { src: '/Lucid1.jpg', alt: 'In collaboration with MatteBlackStudios for the release of LUCID' },
+  { src: '/Lucid2.jpg', alt: 'In collaboration with MatteBlackStudios for the release of LUCID' },
+  { src: '/FrenetikaTheMage.jpg', alt: 'In collaboration with the release of the Frenetika PC game' },
+  { src: '/Friedrich.jpg', alt: 'I definitely do NOT have a favorite OC in the Wastelands series' },
+  { src: '/GallowanCommission.jpg', alt: 'The best fantasy race from the mind of the best Dungeon Master in the world' },
+  { src: '/Memoriam.jpg' },
+  { src: '/Sketch.jpg' },
 ]
 
 export default function IllustrationModal({ isOpen, onClose }) {
